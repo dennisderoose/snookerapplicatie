@@ -7,8 +7,11 @@
 	<label for="naam">Naam Topic:</label> 
   <input name="naam">
   <label for="vraag">Vraag:</label> 
-	<input name="vraag">
+	<input id="vraag" name="vraag" #newtopictitel>
   </div>
+  <button (click)="addTopic(newtopictitel)" class="ui positive right floated button">
+    toevoegen topic
+  </button>  
 </form>
 <app-topic></app-topic>
 
