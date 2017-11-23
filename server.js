@@ -53,7 +53,7 @@ function handleError(res, reason, message, code) {
  *    POST: creates a new contact
  */
 
-app.get("/webapptaak/collections/topics", function(req, res) {
+app.get("/topics", function(req, res) {
   db.collection(TOPICS_COLLECTION).find({}).toArray(function(err, docs) {
     if (err) {
       handleError(res, err.message, "Failed to get topics.");
@@ -64,7 +64,7 @@ app.get("/webapptaak/collections/topics", function(req, res) {
 
 });
 
-app.post("/webapptaak/collections/topics", function(req, res) {
+app.post("/topics", function(req, res) {
   var newTopic = req.body;
   
     if (!req.body.name) {
