@@ -14,6 +14,7 @@ var express = require("express");
 var path = require("path");
 var bodyParser = require("body-parser");
 var mongoose = require("mongoose");
+let mongodb = require("mongodb"); 
 //var ObjectID = mongodb.ObjectID;
 
 var TOPICS_COLLECTION = "topics";
@@ -26,12 +27,12 @@ app.use(bodyParser.json());
 var db;
 
 // Connect to the database before starting the application server.
-mongoose.connect('mongodb://Dennisder:denny1997@ds113136.mlab.com:13136/webapptaak', function (err, database) {
+mongodb.MongoClient.connect('mongodb://Dennisder:denny1997@ds113136.mlab.com:13136/webapptaak', function (err, database) {
   if (err) {
     console.log(err);
     process.exit(1);
   }
-
+  //process.env.MONGODB_URI
   // Save database object from the callback for reuse.
   db = database;
   console.log("Database connection ready");
@@ -41,6 +42,7 @@ mongoose.connect('mongodb://Dennisder:denny1997@ds113136.mlab.com:13136/webappta
     var port = server.address().port;
     console.log("App now running on port", port);
   });
+
 });
 
 function handleError(res, reason, message, code) {
@@ -53,7 +55,8 @@ function handleError(res, reason, message, code) {
  *    POST: creates a new contact
  */
 
-app.get("/topics", function(req, res) {
+app.get("/webapptaak/topics", function(req, res) {
+  console.log(db);
   db.collection(TOPICS_COLLECTION).find({}).toArray(function(err, docs) {
     if (err) {
       handleError(res, err.message, "Failed to get topics.");
@@ -64,7 +67,7 @@ app.get("/topics", function(req, res) {
 
 });
 
-app.post("/topics", function(req, res) {
+app.post("/webapptaak/topics", function(req, res) {
   var newTopic = req.body;
   
     if (!req.body.name) {

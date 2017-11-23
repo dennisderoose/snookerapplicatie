@@ -5,12 +5,13 @@ import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class TopicService {
-    private topicsUrl = '/topics';
+    private topicsUrl = '/webapptaak/topics';
 
     constructor (private http: Http) {}
 
     // get("/api/contacts")
     getTopics(): Promise<void | Topic[]> {
+      console.log(this.topicsUrl);
       return this.http.get(this.topicsUrl)
                  .toPromise()
                  .then(response => response.json() as Topic[])
@@ -48,6 +49,7 @@ export class TopicService {
     private handleError (error: any) {
       let errMsg = (error.message) ? error.message :
       error.status ? `${error.status} - ${error.statusText}` : 'Server error';
-      console.error(errMsg); // log to console instead
+      console.error(errMsg);
+      console.log(errMsg); // log to console instead
     }
 }
