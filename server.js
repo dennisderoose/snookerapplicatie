@@ -16,7 +16,7 @@ var bodyParser = require("body-parser");
 var mongoose = require("mongoose");
 //var ObjectID = mongodb.ObjectID;
 
-var CONTACTS_COLLECTION = "contacts";
+var TOPICS_COLLECTION = "topics";
 
 var app = express();
 app.use(express.static(__dirname + "/dist"));
@@ -42,3 +42,56 @@ mongoose.connect('mongodb://Dennisder:denny1997@ds113136.mlab.com:13136/webappta
     console.log("App now running on port", port);
   });
 });
+
+function handleError(res, reason, message, code) {
+  console.log("ERROR: " + reason);
+  res.status(code || 500).json({"error": message});
+}
+
+/*  "/api/contacts"
+ *    GET: finds all contacts
+ *    POST: creates a new contact
+ */
+
+app.get("/webapptaak/collections/topics", function(req, res) {
+  db.collection(TOPICS_COLLECTION).find({}).toArray(function(err, docs) {
+    if (err) {
+      handleError(res, err.message, "Failed to get topics.");
+    } else {
+      res.status(200).json(docs);
+    }
+  });
+
+});
+
+app.post("/webapptaak/collections/topics", function(req, res) {
+  var newTopic = req.body;
+  
+    if (!req.body.name) {
+      handleError(res, "Invalid user input", "Must provide a name.", 400);
+    }
+  
+    db.collection(TOPICS_COLLECTION).insertOne(newTopic, function(err, doc) {
+      if (err) {
+        handleError(res, err.message, "Failed to create new contact.");
+      } else {
+        res.status(201).json(doc.ops[0]);
+      }
+    });
+
+});
+
+/*  "/api/contacts/:id"
+ *    GET: find contact by id
+ *    PUT: update contact by id
+ *    DELETE: deletes contact by id
+ */
+/*
+app.get("/api/topic/:id", function(req, res) {
+});
+
+app.put("/api/topic/:id", function(req, res) {
+});
+
+app.delete("/api/topic/:id", function(req, res) {
+});*/

@@ -1,0 +1,28 @@
+import { Component, OnInit, Input } from '@angular/core';
+import { Topic } from '../topic';
+import { TopicService } from '../topic.service';
+
+@Component({
+  selector: 'app-topic-details',
+  templateUrl: './topic-details.component.html',
+  styleUrls: ['./topic-details.component.css']
+})
+export class TopicDetailsComponent implements OnInit {
+  @Input()
+  topic: Topic;
+
+  @Input()
+  createHandler: Function;
+
+  constructor(private topicService: TopicService) { }
+
+  createTopic(topic: Topic) {
+    this.topicService.createContact(topic).then((newTopic: Topic) => {
+      this.createHandler(newTopic);
+    });
+  }
+
+  ngOnInit() {
+  }
+
+}
