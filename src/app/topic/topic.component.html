@@ -2,7 +2,7 @@
   <li class="list-group-item"
     *ngFor="let topic of topics"
     (click)="selectTopic(topic)"
-    [class.active]="topic === selectTopic">
+    [class.active]="topic === selectedTopic">
     {{topic.name}}
   </li>
 </ul>
