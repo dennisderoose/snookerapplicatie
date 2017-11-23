@@ -17,7 +17,7 @@ export class TopicDetailsComponent implements OnInit {
   constructor(private topicService: TopicService) { }
 
   createTopic(topic: Topic) {
-    this.topicService.createContact(topic).then((newTopic: Topic) => {
+    this.topicService.createTopic(topic).then((newTopic: Topic) => {
       this.createHandler(newTopic);
     });
   }

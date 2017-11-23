@@ -10,7 +10,7 @@ export class TopicService {
     constructor (private http: Http) {}
 
     // get("/api/contacts")
-    getContacts(): Promise<void | Topic[]> {
+    getTopics(): Promise<void | Topic[]> {
       return this.http.get(this.topicsUrl)
                  .toPromise()
                  .then(response => response.json() as Topic[])
@@ -18,8 +18,8 @@ export class TopicService {
     }
 
     // post("/api/contacts")
-    createContact(newContact: Topic): Promise<void | Topic> {
-      return this.http.post(this.topicsUrl, newContact)
+    createTopic(newTopic: Topic): Promise<void | Topic> {
+      return this.http.post(this.topicsUrl, newTopic)
                  .toPromise()
                  .then(response => response.json() as Topic)
                  .catch(this.handleError);

@@ -17,7 +17,7 @@ export class TopicComponent implements OnInit {
 
   ngOnInit() {
     this.topicService
-    .getContacts()
+    .getTopics()
     .then((topics: Topic[]) => {
       this.topics = topics.map((topic) => {
         return topic;
@@ -31,7 +31,7 @@ export class TopicComponent implements OnInit {
     });
   }
 
-  selectContact(topic: Topic) {
+  selectTopic(topic: Topic) {
     this.selectedTopic = topic
   }
 
@@ -41,7 +41,7 @@ export class TopicComponent implements OnInit {
     };
 
     // By default, a newly-created contact will have the selected state.
-    this.selectContact(topic);
+    this.selectTopic(topic);
   }  
 
 }
