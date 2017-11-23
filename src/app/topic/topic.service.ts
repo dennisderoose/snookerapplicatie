@@ -5,7 +5,7 @@ import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class TopicService {
-    private topicsUrl = '/webapptaak/collections/topics';
+    private topicsUrl = '/topics';
 
     constructor (private http: Http) {}
 
