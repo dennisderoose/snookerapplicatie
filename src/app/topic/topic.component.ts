@@ -51,6 +51,7 @@ export class TopicComponent implements OnInit {
   }  
 
   addTopic = (topic: Topic) => {
+    topic = new Topic();
     console.log(topic.name);
     topic.name = 'klm';
     console.log(topic.name);
