@@ -10,13 +10,13 @@ import 'rxjs/add/operator/map'
   providers: [TopicService]
 })
 export class TopicComponent implements OnInit {
-
+  name = 'test'
   topics: Topic[]
   selectedTopic: Topic
 
   constructor(private topicService: TopicService) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.createNewContact();
     this.topicService
     .getTopics()
@@ -37,7 +37,7 @@ export class TopicComponent implements OnInit {
     this.selectedTopic = topic
   }
 
-  createNewContact() {
+  createNewContact(): void {
     var topic: Topic = {
       name: ''
     };
