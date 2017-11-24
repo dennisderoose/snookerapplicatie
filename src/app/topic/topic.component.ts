@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Topic } from '../topic/topic';
+import { Topic } from '../topic/topic.model';
 import { TopicService } from '../topic/topic.service';
 import 'rxjs/add/operator/map'
 

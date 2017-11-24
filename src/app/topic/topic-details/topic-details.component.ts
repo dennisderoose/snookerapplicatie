@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Topic } from '../topic';
+import { Topic } from '../topic.model';
 import { TopicService } from '../topic.service';
 
 @Component({
@@ -8,6 +8,7 @@ import { TopicService } from '../topic.service';
   styleUrls: ['./topic-details.component.css']
 })
 export class TopicDetailsComponent implements OnInit {
+  @Input() name: string;
   @Input()
   topic: Topic;
 
