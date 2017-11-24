@@ -52,6 +52,7 @@ export class TopicComponent implements OnInit {
 
   addTopic = (topic: Topic) => {
     console.log("k");
+    topic.name = 'klm';
     this.topics.push(topic);
     this.selectTopic(topic);
     return this.topics;
