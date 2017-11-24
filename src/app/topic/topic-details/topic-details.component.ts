@@ -27,7 +27,6 @@ export class TopicDetailsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.createHandler();
     this.createNewTopic();
   }
 
@@ -53,6 +52,12 @@ export class TopicDetailsComponent implements OnInit {
     // By default, a newly-created contact will have the selected state.
     this.selectTopic(topic);
   } 
+
+  addTopic = (topic: Topic) => {
+    this.topics.push(topic);
+    this.selectTopic(topic);
+    return this.topics;
+  }
 
 
 }
