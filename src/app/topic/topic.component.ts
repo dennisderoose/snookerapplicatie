@@ -17,6 +17,7 @@ export class TopicComponent implements OnInit {
   constructor(private topicService: TopicService) { }
 
   ngOnInit() {
+    this.createNewContact();
     this.topicService
     .getTopics()
     .then((topics: Topic[]) => {
