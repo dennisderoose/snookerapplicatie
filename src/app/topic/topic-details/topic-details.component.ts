@@ -20,6 +20,7 @@ export class TopicDetailsComponent implements OnInit {
   constructor(private topicService: TopicService) { }
 
   createTopic(topic: Topic) {
+    console.log("hln");
     this.topicService.createTopic(topic).then((newTopic: Topic) => {
       this.createHandler(newTopic);
     });
