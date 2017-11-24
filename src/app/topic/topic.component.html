@@ -1,13 +1,14 @@
 <ul class="list-group">
-  <!--<li class="list-group-item"
+  <li class="list-group-item"
     *ngFor="let topic of topics"
     (click)="selectTopic(topic)"
     [class.active]="topic === selectedTopic">
     {{topic.name}}
-  </li>-->
+  </li>
 </ul>
 <div class="col-md-5 col-md-offset-2">
-  <app-topic-details>
+  <app-topic-details
+    [topic]="selectTopic">
   </app-topic-details>
 </div>
 <form class="ui large form segment"> 
@@ -24,4 +25,7 @@
   <input name="Antwoord">
   </div> 
 </form>
+
+<input class="form-control" name="topic" [(ngModel)]="selectedTopic.name" placeholder="Name"/>
+<button type="button" (click)="onBtnClick()">Create</button>
 

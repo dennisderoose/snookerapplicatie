@@ -8,7 +8,6 @@ import { TopicService } from '../topic.service';
   styleUrls: ['./topic-details.component.css']
 })
 export class TopicDetailsComponent implements OnInit {
-  @Input() name: string;
   @Input()
   topic: Topic;
 
@@ -22,32 +21,8 @@ export class TopicDetailsComponent implements OnInit {
       this.createHandler(newTopic);
     });
   }
-/*
+
   ngOnInit() {
   }
-
-  name = 'Angular 5';
-*/  selectedTopic: Topic;
-
-  ngOnInit(): void {
-    this.createNewTopic();
-  }
-
-  onBtnClick() {
-    console.log(this.selectedTopic.name)
-  }
-
-  selectTopic(topic: Topic): void {
-    this.selectedTopic = topic;
-  }
-
-  createNewTopic(): void {
-    var topic: Topic = {
-      name: ''
-    };
-
-    this.selectTopic(topic);
-  }
-
 
 }
