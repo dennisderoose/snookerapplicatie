@@ -27,6 +27,7 @@ export class TopicDetailsComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.createHandler();
     this.createNewTopic();
   }
 
