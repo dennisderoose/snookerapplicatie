@@ -1,4 +1,4 @@
-<!--<div *ngIf="topic" class="row">
+<div *ngIf="topic" class="row">
   <div class="col-md-12">
     <h2 *ngIf="topic._id">Topic Details</h2>
     <h2 *ngIf="!topic._id">New Topic</h2>
@@ -10,6 +10,6 @@
       <label for="topic-name">Name</label>
       <input class="form-control" name="topic-name" [(ngModel)]="selectedTopic.name" placeholder="Name"/>
     </div>
-    <button class="btn btn-primary" *ngIf="!topic._id" (click)="createTopic(topic)">Create</button>
+    <button class="btn btn-primary" *ngIf="!topic._id" (click)="onBtnClick()">Createsss</button>
   </form>
-</div>-->
+</div>
