@@ -57,7 +57,7 @@ export class TopicDetailsComponent implements OnInit {
     this.selectTopic(topic);
   } 
 
-  addTopics = (topic: Topic) => {
+  addTopics = (topicje: Topic) => {
     return this.topicje;
   }
 
