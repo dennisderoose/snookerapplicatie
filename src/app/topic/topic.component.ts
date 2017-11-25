@@ -38,7 +38,7 @@ export class TopicComponent implements OnInit {
   }
 
   selectTopic(topic: Topic) {
-    console.log("h");
+    console.log("B");
     this.selectedTopic = topic
   }
 
@@ -53,7 +53,7 @@ export class TopicComponent implements OnInit {
 
   addTopic = (topic: Topic) => {
     topic = new Topic();
-    console.log("h");
+    console.log("U");
     console.log(this.selectedTopic.name);
     console.log("l");
     topic.name = 'klm';
