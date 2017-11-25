@@ -8,7 +8,7 @@ import 'rxjs/add/operator/map'
   selector: 'app-topic',
   templateUrl: './topic.component.html',
   styleUrls: ['./topic.component.css'],
-  providers: [TopicService]
+  providers: [TopicService,TopicDetailsComponent]
 })
 export class TopicComponent implements OnInit {
   name = 'test'
