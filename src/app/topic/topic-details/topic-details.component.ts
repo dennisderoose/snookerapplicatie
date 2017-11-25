@@ -21,6 +21,7 @@ export class TopicDetailsComponent implements OnInit {
 
   createTopic(topic: Topic) {
     console.log("hln");
+    console.log(topic);
     this.topicService.createTopic(topic).then((newTopic: Topic) => {
       this.createHandler(newTopic);
     });
@@ -41,7 +42,7 @@ export class TopicDetailsComponent implements OnInit {
   }
 
   selectTopic(topic: Topic) {
-    console.log("l");
+    console.log("P");
     this.selectedTopic = topic
   }
 
@@ -55,7 +56,7 @@ export class TopicDetailsComponent implements OnInit {
   } 
 
   addTopic = (topic: Topic) => {
-    console.log("l");
+    console.log("K");
     this.topics.push(topic);
     this.selectTopic(topic);
     return this.topics;
