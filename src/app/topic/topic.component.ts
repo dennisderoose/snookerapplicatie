@@ -55,7 +55,6 @@ export class TopicComponent implements OnInit {
   addTopic = (topic: Topic) => {
     topic = new Topic();
     console.log("U");
-    console.log(this.selectedTopic.name);
     console.log("l");
     console.log(this.topics.length);
     console.log("length");    

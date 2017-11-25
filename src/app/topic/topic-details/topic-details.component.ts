@@ -20,7 +20,6 @@ export class TopicDetailsComponent implements OnInit {
   constructor(private topicService: TopicService) { }
 
   createTopic(topic: Topic) {
-    console.log("hln");
     console.log(this.selectedTopic.name);
     topic = new Topic();
     topic.name = this.selectedTopic.name;
@@ -44,7 +43,6 @@ export class TopicDetailsComponent implements OnInit {
   }
 
   selectTopic(topic: Topic) {
-    console.log("P");
     this.selectedTopic = topic
   }
 
@@ -58,7 +56,7 @@ export class TopicDetailsComponent implements OnInit {
   } 
 
   addTopic = (topic: Topic) => {
-    console.log("K");
+    console.log("dennis");
     this.topics.push(topic);
     this.selectTopic(topic);
     return this.topics;
