@@ -14,7 +14,9 @@ export class TopicDetailsComponent implements OnInit {
   @Input()
   createHandler: Function;
 
-  public topicje: Topic
+  @Input()
+  topicje: Topic
+  
   topics: Topic[];
   selectedTopic: Topic;
 
