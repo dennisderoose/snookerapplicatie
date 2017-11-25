@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Topic } from '../topic/topic.model';
+import { TopicDetailsComponent } from '../topic/topic-details/topic-details.component';
 import { TopicService } from '../topic/topic.service';
 import 'rxjs/add/operator/map'
 
@@ -14,7 +15,7 @@ export class TopicComponent implements OnInit {
   topics: Topic[]
   selectedTopic: Topic
 
-  constructor(private topicService: TopicService) { }
+  constructor(private topicService: TopicService, private topicDetailsComponent: TopicDetailsComponent) { }
 
   ngOnInit(): void {
     this.createNewTopic();
@@ -53,9 +54,8 @@ export class TopicComponent implements OnInit {
   }  
 
   addTopic = (topic: Topic) => {
+    this.topics = this.topicDetailsComponent.topics;
     topic = new Topic();
-    console.log("U");
-    console.log("l");
     console.log(this.topics.length);
     console.log("length");    
     console.log(this.topics.pop);
