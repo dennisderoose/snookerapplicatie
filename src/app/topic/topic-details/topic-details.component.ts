@@ -23,7 +23,7 @@ export class TopicDetailsComponent implements OnInit {
     console.log("hln");
     console.log(this.selectedTopic.name);
     topic = new Topic();
-    topic.name = 'nederlands';
+    topic.name = this.selectedTopic.name;
     this.topicService.createTopic(topic).then((newTopic: Topic) => {
       this.createHandler(newTopic);
     });
