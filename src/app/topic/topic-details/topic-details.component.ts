@@ -14,19 +14,14 @@ export class TopicDetailsComponent implements OnInit {
   @Input()
   createHandler: Function;
 
-  @Input()
-  topicje: Topic
-  
   topics: Topic[];
   selectedTopic: Topic;
 
   constructor(private topicService: TopicService) { }
 
   createTopic(topic: Topic) {
-    console.log(this.selectedTopic.name);
     topic = new Topic();
     topic.name = this.selectedTopic.name;
-    this.topicje = topic;
     this.topicService.createTopic(topic).then((newTopic: Topic) => {
       this.createHandler(newTopic);
     });
@@ -34,10 +29,6 @@ export class TopicDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.createNewTopic();
-  }
-
-  onBtnClick() {
-    console.log(this.selectedTopic.name)
   }
 
   private getIndexOfContact = (topicId: String) => {
@@ -58,23 +49,4 @@ export class TopicDetailsComponent implements OnInit {
     // By default, a newly-created contact will have the selected state.
     this.selectTopic(topic);
   } 
-
-  addTopi() : Topic {
-    console.log(this.topicje);
-    return this.topicje;
-  }
-
-  addTopics = (topicje: Topic) => {
-    console.log(this.topicje.name);
-    return this.topicje === topicje;
-  }
-
-  addTopic = (topic: Topic) => {
-    console.log("dennis");
-    this.topics.push(topic);
-    this.selectTopic(topic);
-    return this.topics;
-  }
-
-
 }
