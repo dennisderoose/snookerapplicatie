@@ -59,7 +59,7 @@ export class TopicComponent implements OnInit {
     topic = this.topicDetailsComponent.addTopics
     console.log(this.topics.length);
     console.log("length");    
-    console.log(this.topics.pop);
+    //console.log(this.topics.pop);
     //topic.name = 'klm';
     console.log(topic.name);
     this.topics.push(topic);
