@@ -21,6 +21,7 @@ export class TopicDetailsComponent implements OnInit {
 
   createTopic(topic: Topic) {
     console.log("hln");
+    console.log(this.selectedTopic.name);
     topic = new Topic();
     topic.name = 'nederlands';
     this.topicService.createTopic(topic).then((newTopic: Topic) => {
