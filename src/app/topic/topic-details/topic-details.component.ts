@@ -59,7 +59,7 @@ export class TopicDetailsComponent implements OnInit {
 
   addTopics = (topicje: Topic) => {
     console.log(this.topicje.name);
-    return this.topicje;
+    return this.topicje === topicje;
   }
 
   addTopic = (topic: Topic) => {
