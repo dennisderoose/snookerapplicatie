@@ -41,7 +41,7 @@ export class TopicDetailsComponent implements OnInit {
   }
 
   selectTopic(topic: Topic) {
-    console.log("p");
+    console.log("l");
     this.selectedTopic = topic
   }
 

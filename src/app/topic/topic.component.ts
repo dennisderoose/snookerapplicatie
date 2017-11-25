@@ -38,6 +38,7 @@ export class TopicComponent implements OnInit {
   }
 
   selectTopic(topic: Topic) {
+    console.log("h");
     this.selectedTopic = topic
   }
 

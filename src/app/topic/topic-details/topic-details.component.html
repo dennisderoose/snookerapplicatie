@@ -8,8 +8,8 @@
   <form class="col-md-12">
     <div class="form-group">
       <label for="topic-name">Name</label>
-      <input class="form-control" name="topic-name" [(ngModel)]="selectedTopic.name" placeholder="Name"/>
+      <input class="form-control" name="topic-name" [(ngModel)]="topic.name" placeholder="Name"/>
     </div>
-    <button class="btn btn-primary" *ngIf="!topic._id" (click)="createTopic(topic)">Createsss</button>
+    <button class="btn btn-primary" *ngIf="!topic._id" (click)="createTopic(topic)">Create</button>
   </form>
 </div>
