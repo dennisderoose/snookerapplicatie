@@ -21,7 +21,7 @@ export class TopicDetailsComponent implements OnInit {
 
   createTopic(topic: Topic) {
     console.log("hln");
-    console.log(topic);
+    console.log(topic.name);
     this.topicService.createTopic(topic).then((newTopic: Topic) => {
       this.createHandler(newTopic);
     });
