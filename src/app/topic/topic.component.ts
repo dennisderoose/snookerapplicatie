@@ -64,12 +64,8 @@ export class TopicComponent implements OnInit {
     });   
     topic = new Topic();
     //console.log(this.topicDetailsComponent.addTopics);
-    topic = this.topics.pop();
-    console.log(this.topics.length);
-    console.log("length");    
+    topic = this.topics.pop();   
     //console.log(this.topics.pop);
-    topic.name = 'klm';
-    console.log(topic.name);
     this.topics.push(topic);
     this.selectTopic(topic);
     return this.topics;
