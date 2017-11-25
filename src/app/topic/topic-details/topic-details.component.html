@@ -1,9 +1,9 @@
-<div *ngIf="topic" class="row">
+<!--<div *ngIf="topic" class="row">
   <div class="col-md-12">
     <h2 *ngIf="topic._id">Topic Details</h2>
     <h2 *ngIf="!topic._id">New Topic</h2>
   </div>
-</div>
+</div>-->
 <!--
 <form class="ui large form segment"> 
     <h3 class="ui header">Voeg een nieuw topic toe</h3>
@@ -28,7 +28,7 @@
           <input class="form-control" name="topic-name" [(ngModel)]="selectedTopic.name" placeholder="Topic"/>   
           <label for="topic-vraag">Vraag:</label>
           <input class="form-control" name="topic-vraag"placeholder="Vraag"/>              
-          <button class="btn btn-primary" *ngIf="!topic._id" (click)="createTopic(topic)">Creates</button>
+          <button class="btn btn-primary" *ngIf="!topic._id" (click)="createTopic(topic)">Create</button>
         </div>
       </form>
     </div>
