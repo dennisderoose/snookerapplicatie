@@ -40,6 +40,7 @@ export class TopicComponent implements OnInit {
   selectTopic(topic: Topic) {
     console.log("B");
     this.selectedTopic = topic
+    console.log(this.selectedTopic);
   }
 
   createNewTopic(): void {
