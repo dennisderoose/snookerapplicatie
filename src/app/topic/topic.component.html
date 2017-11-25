@@ -6,6 +6,17 @@
     {{topic.name}}
   </li>
 </ul>
+<div class="col-md-5 col-md-offset-2" *ngFor="let topic of topics">
+  <form class="ui large form segment"> 
+    <h3 class="ui header">{{topic.name}}</h3>
+    <div class="field">
+    <label for="Antwoord">Opmerking invullen:</label> 
+    <input name="Antwoord">
+    </div>
+  </form>
+</div>
+
+
 <div class="col-md-5 col-md-offset-2">
   <app-topic-details
     [topic]="selectTopic"
