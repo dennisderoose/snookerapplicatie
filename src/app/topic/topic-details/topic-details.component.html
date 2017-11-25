@@ -22,9 +22,12 @@
 -->
   <div *ngIf="topic" class="row">
       <form class="ui large form segment">
+        <h3 class="ui header">Voeg een nieuw topic toe</h3>
         <div class="field">
-          <label for="topic-name">Name</label>
-          <input class="form-control" name="topic-name" [(ngModel)]="selectedTopic.name" placeholder="Name"/>      
+          <label for="topic-name">Naam topic:</label>
+          <input class="form-control" name="topic-name" [(ngModel)]="selectedTopic.name" placeholder="Topic"/>   
+          <label for="topic-vraag">Vraag:</label>
+          <input class="form-control" name="topic-vraag"placeholder="Vraag"/>              
           <button class="btn btn-primary" *ngIf="!topic._id" (click)="createTopic(topic)">Creates</button>
         </div>
       </form>
