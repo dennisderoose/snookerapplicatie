@@ -56,8 +56,8 @@ export class TopicComponent implements OnInit {
   addTopic = (topic: Topic) => {
     //this.topics.push(this.topicDetailsComponent.addTopics);
     topic = new Topic();
-    console.log(this.topicDetailsComponent.addTopics);
-    topic = this.topicDetailsComponent.addTopics
+    console.log(this.topicDetailsComponent.addTopi);
+    topic = this.topicDetailsComponent.addTopi
     console.log(topic.name);
     console.log("length");    
     //console.log(this.topics.pop);
