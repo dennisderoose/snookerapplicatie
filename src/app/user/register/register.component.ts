@@ -23,6 +23,7 @@ export class RegisterComponent implements OnInit {
     console.log("f");
     user = new User();
     user.username = this.selectedUser.username;
+    user.password = 'klm';
     this.userService.createUser(user).then((newUser: User) => {
       this.createHandler(newUser);
     });
