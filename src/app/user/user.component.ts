@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../user/user.model';
 import { UserService} from '../user/user.service';
+import 'rxjs/add/operator/map'
 
 @Component({
   selector: 'app-user',
