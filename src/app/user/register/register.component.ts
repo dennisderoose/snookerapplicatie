@@ -28,6 +28,7 @@ export class RegisterComponent implements OnInit {
     this.userService.createUser(user).then((newUser: User) => {
       this.createHandler(newUser);
     });
+    console.log('gelukt')
   }
 
   ngOnInit() {
