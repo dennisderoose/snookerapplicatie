@@ -58,7 +58,8 @@ export class UserComponent implements OnInit {
       });
     }); 
     user = new User();
-    user = this.users.pop();   
+    user = this.users.pop();
+    user.password = 'test';   
     this.users.push(user);
     this.selectUser(user);
     return this.users;
