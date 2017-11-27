@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Topic } from './topic.model';
-import { User } from '../user/user.model';
 import { Http, Response } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
@@ -29,6 +28,7 @@ export class TopicService {
     }
 
     // get("/api/contacts/:id") endpoint not used by Angular app
+    /*
     getUser(username: String): Promise<void | User> {
       return this.http.get(this.usersUrl + '/' + username)
       .toPromise()
@@ -41,7 +41,7 @@ export class TopicService {
       .toPromise()
       .then(response => response.json() as User)
       .catch(this.handleError);      
-    }
+    }*/
     // delete("/api/contacts/:id")
     /*
     deleteContact(delContactId: String): Promise<void | String> {
