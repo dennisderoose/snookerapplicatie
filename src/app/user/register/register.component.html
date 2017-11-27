@@ -1,0 +1,12 @@
+<div *ngIf="user" class="row">
+  <form class="ui large form segment">
+    <h3 class="ui header">Voeg een nieuw topic toe</h3>
+    <div class="field">
+      <label for="user-name">Naam topic:</label>
+      <input class="form-control" name="user-name" [(ngModel)]="selectedUser.username" placeholder="Username"/>   
+      <label for="user-vraag">Vraag:</label>
+      <input class="form-control" name="user-vraag"placeholder="Vraag"/>              
+      <button class="btn btn-primary" *ngIf="!user._id" (click)="createUser(user)">Create</button>
+    </div>
+  </form>
+</div>

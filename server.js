@@ -84,6 +84,35 @@ app.post("/webapptaak/topics", function(req, res) {
 
 });
 
+app.get("/webapptaak/users/:name", function(req, res) {
+  db.collection(CONTACTS_COLLECTION).findOne({ name: new ObjectID(req.params.name) }, function(err, doc) {
+    if (err) {
+      handleError(res, err.message, "Failed to get contact");
+    } else {
+      res.status(200).json(doc);
+    }
+  });
+
+});
+
+app.post("/webapptaak/users", function(req, res) {
+  var newTopic = req.body;
+  
+    if (!req.body.name) {
+      handleError(res, "Invalid user input", "Must provide a name.", 400);
+    }
+  
+    db.collection(TOPICS_COLLECTION).insertOne(newTopic, function(err, doc) {
+      if (err) {
+        handleError(res, err.message, "Failed to create new contact.");
+      } else {
+        res.status(201).json(doc.ops[0]);
+      }
+    });
+
+});
+
+
 /*  "/api/contacts/:id"
  *    GET: find contact by id
  *    PUT: update contact by id

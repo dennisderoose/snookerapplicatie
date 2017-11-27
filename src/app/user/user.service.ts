@@ -1,33 +1,13 @@
 import { Injectable } from '@angular/core';
-import { Topic } from './topic.model';
-import { User } from '../user/user.model';
+import { User } from './user.model';
 import { Http, Response } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
 @Injectable()
-export class TopicService {
-    private topicsUrl = '/webapptaak/topics';
+export class UserService {
     private usersUrl = '/webapptaak/users';
 
     constructor (private http: Http) {}
-
-    // get("/api/contacts")
-    getTopics(): Promise<void | Topic[]> {
-      console.log(this.topicsUrl);
-      return this.http.get(this.topicsUrl)
-                 .toPromise()
-                 .then(response => response.json() as Topic[])
-                 .catch(this.handleError);
-    }
-
-    // post("/api/contacts")
-    createTopic(newTopic: Topic): Promise<void | Topic> {
-      return this.http.post(this.topicsUrl, newTopic)
-                 .toPromise()
-                 .then(response => response.json() as Topic)
-                 .catch(this.handleError);
-    }
-
     // get("/api/contacts/:id") endpoint not used by Angular app
     getUser(username: String): Promise<void | User> {
       return this.http.get(this.usersUrl + '/' + username)
@@ -35,6 +15,15 @@ export class TopicService {
       .then(response => response.json() as User)
       .catch(this.handleError);      
     }
+
+    getUsers(): Promise<void | User[]> {
+        console.log(this.usersUrl);
+        return this.http.get(this.usersUrl)
+                   .toPromise()
+                   .then(response => response.json() as User[])
+                   .catch(this.handleError);
+      }
+
 
     createUser(newUser: User): Promise<void | User> {
       return this.http.post(this.usersUrl, newUser)
