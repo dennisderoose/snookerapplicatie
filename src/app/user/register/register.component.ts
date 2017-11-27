@@ -41,7 +41,7 @@ export class RegisterComponent implements OnInit {
     });
   }
 
-  selectTopic(user: User) {
+  selectUser(user: User) {
     console.log("m");
     this.selectedUser = user
   }
@@ -54,6 +54,6 @@ export class RegisterComponent implements OnInit {
     };
 
     // By default, a newly-created contact will have the selected state.
-    this.selectTopic(user);
+    this.selectUser(user);
   }
 }
