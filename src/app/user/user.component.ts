@@ -38,6 +38,7 @@ export class UserComponent implements OnInit {
   }
 
   createNewUser(): void {
+    console.log("j");
     var user: User = {
       username: '',
       password: '',
@@ -48,6 +49,7 @@ export class UserComponent implements OnInit {
   }  
 
   addUser = (user: User) => {
+    console.log("k");
     this.userService
     .getUsers()
     .then((users: User[]) => {

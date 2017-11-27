@@ -20,6 +20,7 @@ export class RegisterComponent implements OnInit {
   constructor(private userService: UserService) { }
 
   createUser(user: User) {
+    console.log("f");
     user = new User();
     user.username = this.selectedUser.username;
     this.userService.createUser(user).then((newUser: User) => {
@@ -38,10 +39,12 @@ export class RegisterComponent implements OnInit {
   }
 
   selectTopic(user: User) {
+    console.log("m");
     this.selectedUser = user
   }
 
   createNewUser(): void {
+    console.log("p");
     var user: User = {
       username: '',
       password: ''
