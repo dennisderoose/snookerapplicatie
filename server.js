@@ -103,7 +103,7 @@ app.post("/webapptaak/users", function(req, res) {
     if (!req.body.name) {
       handleError(res, "Invalid user input", "Must provide a name.", 400);
     }
-  
+    console.log("kop");
     db.collection(USERS_COLLECTION).insertOne(newUser, function(err, doc) {
       if (err) {
         handleError(res, err.message, "Failed to create new contact.");
