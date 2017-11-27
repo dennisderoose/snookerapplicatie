@@ -87,6 +87,7 @@ app.post("/webapptaak/topics", function(req, res) {
 
 app.get("/webapptaak/users", function(req, res) {
   console.log(db);
+
   db.collection(USERS_COLLECTION).find({}).toArray(function(err, docs) {
     if (err) {
       handleError(res, err.message, "Failed to get topics.");
@@ -113,7 +114,7 @@ app.post("/webapptaak/users", function(req, res) {
     });
 
 });
-
+/*
 app.get("/webapptaak/users/:name", function(req, res) {
   db.collection(CONTACTS_COLLECTION).findOne({ name: new ObjectID(req.params.name) }, function(err, doc) {
     if (err) {
@@ -123,7 +124,7 @@ app.get("/webapptaak/users/:name", function(req, res) {
     }
   });
 
-});
+});*/
 /*
 app.post("/webapptaak/users", function(req, res) {
   var newTopic = req.body;
