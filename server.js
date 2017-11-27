@@ -18,6 +18,7 @@ let mongodb = require("mongodb");
 //var ObjectID = mongodb.ObjectID;
 
 var TOPICS_COLLECTION = "topics";
+var USERS_COLLECTION = "users";
 
 var app = express();
 app.use(express.static(__dirname + "/dist"));
@@ -86,7 +87,7 @@ app.post("/webapptaak/topics", function(req, res) {
 
 app.get("/webapptaak/users", function(req, res) {
   console.log(db);
-  db.collection(TOPICS_COLLECTION).find({}).toArray(function(err, docs) {
+  db.collection(USERS_COLLECTION).find({}).toArray(function(err, docs) {
     if (err) {
       handleError(res, err.message, "Failed to get topics.");
     } else {
@@ -97,13 +98,13 @@ app.get("/webapptaak/users", function(req, res) {
 });
 
 app.post("/webapptaak/users", function(req, res) {
-  var newTopic = req.body;
+  var newUser = req.body;
   
     if (!req.body.name) {
       handleError(res, "Invalid user input", "Must provide a name.", 400);
     }
   
-    db.collection(TOPICS_COLLECTION).insertOne(newTopic, function(err, doc) {
+    db.collection(USERS_COLLECTION).insertOne(newUser, function(err, doc) {
       if (err) {
         handleError(res, err.message, "Failed to create new contact.");
       } else {
