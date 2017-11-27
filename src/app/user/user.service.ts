@@ -9,12 +9,13 @@ export class UserService {
 
     constructor (private http: Http) {}
     // get("/api/contacts/:id") endpoint not used by Angular app
+    /*
     getUser(username: String): Promise<void | User> {
       return this.http.get(this.usersUrl + '/' + username)
       .toPromise()
       .then(response => response.json() as User)
       .catch(this.handleError);      
-    }
+    }*/
 
     getUsers(): Promise<void | User[]> {
         console.log(this.usersUrl);
