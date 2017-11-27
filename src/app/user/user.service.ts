@@ -27,6 +27,7 @@ export class UserService {
 
 
     createUser(newUser: User): Promise<void | User> {
+        console.log("gh");
       return this.http.post(this.usersUrl, newUser)
       .toPromise()
       .then(response => response.json() as User)
