@@ -103,6 +103,8 @@ app.post("/webapptaak/users", function(req, res) {
   var newUser = req.body;
   newUser.salt = crypto.randomBytes(32).toString('hex');
   newUser.hash = crypto.pbkdf2Sync(newUser.password, newUser.salt, 10000, 64, 'sha512').toString('hex');
+  newUser.password = newUser.hash;
+  newUser.passwordConfirm = newUser.hash;
   
   
     if (!req.body.name) {
