@@ -40,8 +40,8 @@ export class UserComponent implements OnInit {
     var user: User = {
       name: '',
       username: '',
-      pasword: '',
-      paswordConfirm: ''
+      password: '',
+      passwordConfirm: ''
     };
 
     // By default, a newly-created contact will have the selected state.

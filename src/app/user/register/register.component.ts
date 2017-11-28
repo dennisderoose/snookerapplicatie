@@ -24,8 +24,8 @@ export class RegisterComponent implements OnInit {
     user = new User();
     user.name = 'naam';
     user.username = this.selectedUser.username;
-    user.pasword = this.selectedUser.pasword;
-    user.paswordConfirm = this.selectedUser.paswordConfirm;
+    user.password = this.selectedUser.password;
+    user.passwordConfirm = this.selectedUser.passwordConfirm;
     this.userService.createUser(user).then((newUser: User) => {
       this.createHandler(newUser);
     });
@@ -49,8 +49,8 @@ export class RegisterComponent implements OnInit {
     var user: User = {
       name: '',
       username: '',
-      pasword: '',
-      paswordConfirm: ''
+      password: '',
+      passwordConfirm: ''
     };
 
     // By default, a newly-created contact will have the selected state.

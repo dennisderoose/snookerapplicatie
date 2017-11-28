@@ -5,9 +5,9 @@
       <label for="user-username">Username:</label>
       <input class="form-control" name="user-username" [(ngModel)]="selectedUser.username" placeholder="Username"/>   
       <label for="user-passwoord">Passwoord:</label>
-      <input class="form-control" name="user-passwoord" [(ngModel)]="selectedUser.pasword" placeholder="Passwoord"/>     
+      <input type="password" class="form-control" name="user-passwoord" [(ngModel)]="selectedUser.password" placeholder="Passwoord"/>     
       <label for="user-passwoordConfirm">Passwoord confirmeren:</label>
-      <input class="form-control" name="user-passwoordConfirm" [(ngModel)]="selectedUser.paswordConfirm" placeholder="Passwoord confirmeren"/>                
+      <input type="password" class="form-control" name="user-passwoordConfirm" [(ngModel)]="selectedUser.passwordConfirm" placeholder="Passwoord confirmeren"/>                
       <button class="btn btn-primary" (click)="createUser(user)">Create</button>
     </div>
   </form>
