@@ -41,7 +41,9 @@ export class UserComponent implements OnInit {
       name: '',
       username: '',
       password: '',
-      passwordConfirm: ''
+      passwordConfirm: '',
+      hash: '',
+      salt: ''
     };
 
     // By default, a newly-created contact will have the selected state.
@@ -57,7 +59,10 @@ export class UserComponent implements OnInit {
       });
     }); 
     user = new User();
-    user = this.users.pop(); 
+    user = this.users.pop();
+    //user.salt = crypto.randomBytes(32).toString('hex');
+    //user.hash = crypto.pbkdf2Sync(user.password, user.salt, 
+    //  10000, 64, 'sha512').toString('hex'); 
     this.users.push(user);
     this.selectUser(user);
     return this.users;

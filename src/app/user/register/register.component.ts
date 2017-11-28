@@ -50,7 +50,9 @@ export class RegisterComponent implements OnInit {
       name: '',
       username: '',
       password: '',
-      passwordConfirm: ''
+      passwordConfirm: '',
+      hash: '',
+      salt: ''
     };
 
     // By default, a newly-created contact will have the selected state.

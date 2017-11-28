@@ -4,4 +4,6 @@ export class User {
     username: string;
     password: string;
     passwordConfirm: string;
+    hash: string;
+    salt: string;
 }
