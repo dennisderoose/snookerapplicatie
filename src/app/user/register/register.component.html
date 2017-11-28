@@ -1,12 +1,15 @@
 <div class="row">
   <form class="ui large form segment">
-    <h3 class="ui header">Voeg een nieuw topic toe</h3>
+    <h3 class="ui header">Registreren</h3>
     <div class="field">
-      <label for="user-name">Naam topic:</label>
-      <input class="form-control" name="user-name" [(ngModel)]="selectedUser.name" placeholder="Username"/>   
-      <label for="user-vraag">Vraag:</label>
-      <input class="form-control" name="user-vraag"placeholder="Vraag"/>              
+      <label for="user-username">Username:</label>
+      <input class="form-control" name="user-username" [(ngModel)]="selectedUser.username" placeholder="Username"/>   
+      <label for="user-passwoord">Passwoord:</label>
+      <input class="form-control" name="user-passwoord" [(ngModel)]="selectedUser.pasword" placeholder="Passwoord"/>     
+      <label for="user-passwoordConfirm">Passwoord confirmeren:</label>
+      <input class="form-control" name="user-passwoordConfirm" [(ngModel)]="selectedUser.paswordConfirm" placeholder="Passwoord confirmeren"/>                
       <button class="btn btn-primary" (click)="createUser(user)">Create</button>
     </div>
   </form>
 </div>
+ 

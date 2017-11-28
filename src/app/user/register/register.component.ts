@@ -22,12 +22,13 @@ export class RegisterComponent implements OnInit {
   createUser(user: User) {
     console.log("f");
     user = new User();
-    user.name = this.selectedUser.name;
-    console.log(user);
+    user.name = 'naam';
+    user.username = this.selectedUser.username;
+    user.pasword = this.selectedUser.pasword;
+    user.paswordConfirm = this.selectedUser.paswordConfirm;
     this.userService.createUser(user).then((newUser: User) => {
       this.createHandler(newUser);
     });
-    console.log('gelukt')
   }
 
   ngOnInit() {
@@ -41,14 +42,15 @@ export class RegisterComponent implements OnInit {
   }
 
   selectUser(user: User) {
-    console.log("m");
     this.selectedUser = user
   }
 
   createNewUser(): void {
-    console.log("p");
     var user: User = {
-      name: ''
+      name: '',
+      username: '',
+      pasword: '',
+      paswordConfirm: ''
     };
 
     // By default, a newly-created contact will have the selected state.

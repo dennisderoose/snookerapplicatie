@@ -18,7 +18,6 @@ export class UserService {
     }*/
 
     getUsers(): Promise<void | User[]> {
-        console.log(this.usersUrl);
         return this.http.get(this.usersUrl)
                    .toPromise()
                    .then(response => response.json() as User[])
@@ -27,8 +26,6 @@ export class UserService {
 
 
     createUser(newUser: User): Promise<void | User> {
-      console.log("gh");
-      console.log(newUser);
       return this.http.post(this.usersUrl, newUser)
       .toPromise()
       .then(response => response.json() as User)

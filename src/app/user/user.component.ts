@@ -34,13 +34,14 @@ export class UserComponent implements OnInit {
 
   selectUser(user: User) {
     this.selectedUser = user
-    console.log(this.selectedUser);
   }
 
   createNewUser(): void {
-    console.log("j");
     var user: User = {
-      name: ''
+      name: '',
+      username: '',
+      pasword: '',
+      paswordConfirm: ''
     };
 
     // By default, a newly-created contact will have the selected state.
@@ -48,7 +49,6 @@ export class UserComponent implements OnInit {
   }  
 
   addUser = (user: User) => {
-    console.log("k");
     this.userService
     .getUsers()
     .then((users: User[]) => {
