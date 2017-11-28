@@ -22,8 +22,7 @@ export class RegisterComponent implements OnInit {
   createUser(user: User) {
     console.log("f");
     user = new User();
-    user.username = this.selectedUser.username;
-    user.password = 'klm';
+    user.name = this.selectedUser.name;
     console.log(user);
     this.userService.createUser(user).then((newUser: User) => {
       this.createHandler(newUser);
@@ -49,8 +48,7 @@ export class RegisterComponent implements OnInit {
   createNewUser(): void {
     console.log("p");
     var user: User = {
-      username: '',
-      password: ''
+      name: ''
     };
 
     // By default, a newly-created contact will have the selected state.
