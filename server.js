@@ -120,17 +120,22 @@ app.post("/webapptaak/users", function(req, res) {
     });
 
 });
-/*
+
 app.get("/webapptaak/users/:name", function(req, res) {
+  var getUser = req.body;
   db.collection(CONTACTS_COLLECTION).findOne({ name: new ObjectID(req.params.name) }, function(err, doc) {
     if (err) {
       handleError(res, err.message, "Failed to get contact");
     } else {
       res.status(200).json(doc);
     }
+    // passwoord controle
+    //let hash = crypto.pbkdf2Sync(getUser.password, req.params.salt, 
+    //  10000, 64, 'sha512').toString('hex');
+    //  return this.hash === hash;
   });
 
-});*/
+});
 /*
 app.post("/webapptaak/users", function(req, res) {
   var newTopic = req.body;
