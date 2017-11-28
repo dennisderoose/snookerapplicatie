@@ -15,8 +15,8 @@ var path = require("path");
 var bodyParser = require("body-parser");
 var mongoose = require("mongoose");
 let mongodb = require("mongodb"); 
-let crypto = require('crypto');
-let jwt = require('jsonwebtoken');
+//let crypto = require('crypto');
+//let jwt = require('jsonwebtoken');
 //var ObjectID = mongodb.ObjectID;
 
 var TOPICS_COLLECTION = "topics";
