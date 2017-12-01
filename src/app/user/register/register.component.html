@@ -1,5 +1,5 @@
 <div class="row">
-  <form [formGroup]='user' (ngSubmit)='onSubmit()' class="ui large form segment">
+  <form [formGroup]='usertje' (ngSubmit)='onSubmit()' class="ui large form segment">
     <h3 class="ui header">Registreren</h3>
     <div class="field">
       <label for="user-username">Username:</label>
@@ -9,7 +9,7 @@
       <label for="user-passwoordConfirm">Passwoord confirmeren:</label>
       <input type="password" class="form-control" name="user-passwoordConfirm" [(ngModel)]="selectedUser.passwordConfirm" placeholder="Passwoord confirmeren"/>                
       <!--<button class="btn btn-primary" (click)="createUser(user)">Create</button>-->
-      <button type='submit' [disabled]='!user.valid' class="ui positive right floated button">register</button>
+      <button type='submit' [disabled]='!usertje.valid' class="ui positive right floated button">register</button>
     </div>
   </form>
 </div>

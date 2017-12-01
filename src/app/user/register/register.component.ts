@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { User } from '../user.model';
 import { UserService } from '../user.service';
+import { Router } from '@angular/router';
+import { AbstractControl, FormBuilder, FormGroup, ValidatorFn, Validators, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -8,6 +10,8 @@ import { UserService } from '../user.service';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
+  public usertje: FormGroup;
+
   @Input()
   user: User;
 

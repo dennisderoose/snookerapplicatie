@@ -1,12 +1,12 @@
 <div class="row">
-  <form [formGroup]='user' (ngSubmit)='onSubmit()' class="ui large form segment">
+  <form [formGroup]='usertje' (ngSubmit)='onSubmit()' class="ui large form segment">
     <h3 class="ui header">Inloggen</h3>
     <div class="field">
         <label for="username">username:</label>
         <input type="text" id="username">
         <label for="password">password:</label>
         <input type="password" id="password">      
-      <button type='submit' [disabled]='!user.valid' class="ui positive right floated button">Inloggen</button>
+      <button type='submit' [disabled]='!usertje.valid' class="ui positive right floated button">Inloggen</button>
     </div>
   </form>
 </div>
