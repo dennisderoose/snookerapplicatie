@@ -32,8 +32,9 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     UserModule,
+    TopicModule,
     AppRoutingModule,
-    TopicModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
