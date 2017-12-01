@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { User } from '../user.model';
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
+import { AbstractControl, FormBuilder, FormGroup, ValidatorFn, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -9,7 +10,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-
+  public usertje: FormGroup;
+  public errorMsg: string;
+/*
   @Input()
   user: User;
 
@@ -18,9 +21,9 @@ export class RegisterComponent implements OnInit {
 
   users: User[];
   selectedUser: User;
-
-  constructor(private userService: UserService) { }
-
+*/
+  constructor(private router: Router, private fb: FormBuilder) { }
+/*
   createUser(user: User) {
     console.log("f");
     user = new User();
@@ -32,11 +35,15 @@ export class RegisterComponent implements OnInit {
       this.createHandler(newUser);
     });
   }
-
+*/
   ngOnInit() {
-    this.createNewUser();
+    //this.createNewUser();
+    this.usertje = this.fb.group({
+      username: ['', Validators.required],
+      password: ['', Validators.required]
+    });    
   }
-
+/*
   private getIndexOfContact = (topicId: String) => {
     return this.users.findIndex((topic) => {
       return topic._id === topicId;
@@ -60,7 +67,7 @@ export class RegisterComponent implements OnInit {
     // By default, a newly-created contact will have the selected state.
     this.selectUser(user);
   }
-
+*/
   onSubmit() {
     console.log("oke");
   }
