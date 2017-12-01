@@ -11,7 +11,7 @@ const appRoutes: Routes = [
   //  path: 'recipe',
   //  canActivate: [ AuthGuardService ]
   //},
-  { path: '', redirectTo: 'register', pathMatch: 'full'},
+  { path: '', redirectTo: 'login', pathMatch: 'full'},
   { path: '**', component: PageNotFoundComponent}
 ];
 
