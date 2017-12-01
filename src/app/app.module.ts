@@ -34,7 +34,7 @@ const appRoutes: Routes = [
     UserModule,
     TopicModule,
     AppRoutingModule,
-
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
