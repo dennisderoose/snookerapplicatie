@@ -12,31 +12,26 @@ import { UserComponent } from './user/user.component';
 import { LoginComponent } from './user/login/login.component';
 import { LogoutComponent } from './user/logout/logout.component';
 import { RegisterComponent } from './user/register/register.component';
-
+import { AppRoutingModule } from 'app/app-routing/app-routing.module';
+import { TopicModule } from 'app/topic/topic.module';
+/*
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: '', redirectTo: 'topic-details', pathMatch: 'full'},
   { path: '**', component: PageNotFoundComponent}
-];
+];*/
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    TopicComponent,
-    TopicDetailsComponent,
-    UserComponent,
-    LoginComponent,
-    LogoutComponent,
-    RegisterComponent,
     PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes),
-    FormsModule,
-    HttpModule
+    AppRoutingModule,
+    TopicModule
   ],
   providers: [],
   bootstrap: [AppComponent]
