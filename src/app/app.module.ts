@@ -6,6 +6,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { TopicComponent } from './topic/topic.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { TopicDetailsComponent } from './topic/topic-details/topic-details.component';
 import { UserComponent } from './user/user.component';
 import { LoginComponent } from './user/login/login.component';
@@ -15,7 +16,8 @@ import { RegisterComponent } from './user/register/register.component';
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: '', redirectTo: 'topic-details', pathMatch: 'full'}
+  { path: '', redirectTo: 'topic-details', pathMatch: 'full'},
+  { path: '**', component: PageNotFoundComponent}
 ];
 
 
