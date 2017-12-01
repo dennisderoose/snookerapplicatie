@@ -37,7 +37,10 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit() {
     this.createNewUser();
-    this.usertje = this.fb.group({});
+    this.usertje = this.fb.group({
+      username: ['', Validators.required],
+      password: ['', Validators.required]
+    });
   }
 
   private getIndexOfContact = (topicId: String) => {
