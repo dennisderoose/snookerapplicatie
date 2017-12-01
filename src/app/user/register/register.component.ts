@@ -10,7 +10,7 @@ import { AbstractControl, FormBuilder, FormGroup, ValidatorFn, Validators, FormC
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-/*
+
   @Input()
   user: User;
 
@@ -19,9 +19,9 @@ export class RegisterComponent implements OnInit {
 
   users: User[];
   selectedUser: User;
-*/
+
   constructor(private userService: UserService) { }
-/*
+
   createUser(user: User) {
     console.log("f");
     user = new User();
@@ -33,11 +33,11 @@ export class RegisterComponent implements OnInit {
       this.createHandler(newUser);
     });
   }
-*/
+
   ngOnInit() {
-    //this.createNewUser();
+    this.createNewUser();
   }
-/*
+
   private getIndexOfContact = (topicId: String) => {
     return this.users.findIndex((topic) => {
       return topic._id === topicId;
@@ -65,5 +65,5 @@ export class RegisterComponent implements OnInit {
   onSubmit() {
     console.log("oke");
   }
-*/
+
 }
