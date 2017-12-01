@@ -14,6 +14,7 @@ import { LogoutComponent } from './user/logout/logout.component';
 import { RegisterComponent } from './user/register/register.component';
 import { AppRoutingModule } from 'app/app-routing/app-routing.module';
 import { TopicModule } from 'app/topic/topic.module';
+import { UserModule } from './user/user.module';
 /*
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -30,6 +31,7 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
+    UserModule,
     AppRoutingModule,
     TopicModule
   ],
