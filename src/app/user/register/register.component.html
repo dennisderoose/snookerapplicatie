@@ -8,7 +8,7 @@
       <input type="password" class="form-control" name="user-passwoord" [(ngModel)]="selectedUser.password" placeholder="Passwoord"/>     
       <label for="user-passwoordConfirm">Passwoord confirmeren:</label>
       <input type="password" class="form-control" name="user-passwoordConfirm" [(ngModel)]="selectedUser.passwordConfirm" placeholder="Passwoord confirmeren"/>                
-      <!--<button class="btn btn-primary" (click)="createUser(user)">Create</button>-->
+      <button class="btn btn-primary" (click)="createUser(user)">Create</button>
       <button type='submit' [disabled]='!usertje.valid' class="ui positive right floated button">register</button>
     </div>
   </form>
