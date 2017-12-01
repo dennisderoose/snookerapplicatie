@@ -29,7 +29,8 @@ const appRoutes: Routes = [
     UserComponent,
     LoginComponent,
     LogoutComponent,
-    RegisterComponent
+    RegisterComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
