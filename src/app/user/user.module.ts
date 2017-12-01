@@ -22,14 +22,14 @@ const routes = [
   imports: [
     CommonModule,
     HttpModule,
+    FormsModule,
     RouterModule.forChild(routes)
   ],
   declarations: [
     UserComponent,
     LoginComponent,
     RegisterComponent,
-    LogoutComponent,
-    FormsModule
+    LogoutComponent
   ],
   /*providers: [
     AuthenticationService,
