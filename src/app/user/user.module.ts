@@ -14,8 +14,7 @@ import { UserComponent } from 'app/user/user.component';
 const routes = [
   { path: 'login', component: LoginComponent },
   { path: 'logout', component: LogoutComponent },
-  { path: 'register', component: RegisterComponent },
-  { path: 'user', component: UserComponent }
+  { path: 'register', component: RegisterComponent }
 ];
 
 @NgModule({
