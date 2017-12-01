@@ -10,6 +10,7 @@ import { HttpModule} from '@angular/http';
 import { RegisterComponent } from './register/register.component';
 import { LogoutComponent } from './logout/logout.component';
 import { UserComponent } from 'app/user/user.component';
+import { UserService } from 'app/user/user.service';
 
 const routes = [
   { path: 'login', component: LoginComponent },
@@ -32,10 +33,9 @@ const routes = [
     RegisterComponent,
     LogoutComponent
   ],
-  /*providers: [
-    AuthenticationService,
-    AuthGuardService
-  ],*/
+  providers: [
+    UserService
+  ],
   exports: [
   ]
 })
