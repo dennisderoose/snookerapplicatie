@@ -2,6 +2,7 @@
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
+import { FormsModule } from '@angular/forms';
 //import { AuthenticationService } from './authentication.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -27,7 +28,8 @@ const routes = [
     UserComponent,
     LoginComponent,
     RegisterComponent,
-    LogoutComponent
+    LogoutComponent,
+    FormsModule
   ],
   /*providers: [
     AuthenticationService,
