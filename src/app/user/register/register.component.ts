@@ -21,7 +21,7 @@ export class RegisterComponent implements OnInit {
   users: User[];
   selectedUser: User;
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService,private router: Router, private fb: FormBuilder) { }
 
   createUser(user: User) {
     console.log("f");
@@ -37,6 +37,7 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit() {
     this.createNewUser();
+    this.usertje = this.fb.group({});
   }
 
   private getIndexOfContact = (topicId: String) => {
