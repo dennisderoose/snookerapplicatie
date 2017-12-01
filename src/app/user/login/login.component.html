@@ -1,3 +1,13 @@
-<p>
-  login works!
-</p>
+<div class="row">
+  <form [formGroup]='user' (ngSubmit)='onSubmit()' class="ui large form segment">
+    <h3 class="ui header">Inloggen</h3>
+    <div class="field">
+        <label for="username">username:</label>
+        <input type="text" id="username" formControlName='username'>
+        <label for="password">password:</label>
+        <input type="password" id="password" formControlName='password'>      
+      <button type='submit' [disabled]='!user.valid' class="ui positive right floated button">Inloggen</button>
+    </div>
+  </form>
+</div>
+<a class='item' routerLink="/register" >register</a>
