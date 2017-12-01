@@ -3,11 +3,11 @@
     <h3 class="ui header">Registreren</h3>
     <div class="field">
       <label for="user-username">Username:</label>
-      <input class="form-control" name="user-username" (ngModel)="selectedUser.username" placeholder="Username"/>   
+      <input class="form-control" name="user-username" [(ngModel)]="selectedUser.username" placeholder="Username"/>   
       <label for="user-passwoord">Passwoord:</label>
-      <input type="password" class="form-control" name="user-passwoord" (ngModel)="selectedUser.password" placeholder="Passwoord"/>     
+      <input type="password" class="form-control" name="user-passwoord" [(ngModel)]="selectedUser.password" placeholder="Passwoord"/>     
       <label for="user-passwoordConfirm">Passwoord confirmeren:</label>
-      <input type="password" class="form-control" name="user-passwoordConfirm" (ngModel)="selectedUser.passwordConfirm" placeholder="Passwoord confirmeren"/>                
+      <input type="password" class="form-control" name="user-passwoordConfirm" [(ngModel)]="selectedUser.passwordConfirm" placeholder="Passwoord confirmeren"/>                
       <button class="btn btn-primary" (click)="createUser(user)">Create</button>
     </div>
   </form>

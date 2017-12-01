@@ -21,7 +21,6 @@ const routes = [
   imports: [
     CommonModule,
     HttpModule,
-    ReactiveFormsModule,
     RouterModule.forChild(routes)
   ],
   declarations: [
