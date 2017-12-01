@@ -10,6 +10,7 @@ import { AbstractControl, FormBuilder, FormGroup, ValidatorFn, Validators } from
 export class LoginComponent implements OnInit {
   public user: FormGroup;
   public errorMsg: string;
+  
   constructor() { }
 
   ngOnInit() {
