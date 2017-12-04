@@ -1,4 +1,4 @@
-<div class="row">
+<!--<div class="row">
   <form class="ui large form segment">
     <h3 class="ui header">Registreren</h3>
     <div class="field">
@@ -11,6 +11,39 @@
       <button class="btn btn-primary" (click)="createUser(user)">Create</button>
     </div>
   </form>
-</div>
+</div>-->
+<form [formGroup]='usertje' (ngSubmit)='onSubmit()' class="ui large form segment">
+  <h3 class="ui header">register new user</h3>
+  <div class="field">
+    <label for="username">username:</label>
+    <input type="text" id="username" formControlName='username'>
+    <div class='ui pointing red basic label' *ngIf=' usertje.get("username").errors?.required && usertje.get("username").touched'>
+      a username is required
+    </div>
+    <div class='ui pointing red basic label' *ngIf='usertje.get("username").errors?.minlength && usertje.get("username").touched'>
+      the username should be at least {{user.get("username").errors?.minlength.requiredLength }} letters
+    </div>
+    <div class='ui pointing red basic label' *ngIf='usertje.get("username").errors?.userAlreadyExists && usertje.get("username").touched'>
+      a user with that name already exists
+    </div>
+  </div>
+  <div formGroupName='passwordGroup'>
+    <div class="field">
+      <label for="password">password:</label>
+      <input type="password" id="password" formControlName='password'>
+      <div class='ui pointing red basic label' *ngIf=' passwordControl.errors?.passwordTooShort && passwordControl.touched'>
+        password too short, please use at least {{passwordControl.errors?.passwordTooShort.requiredLength}} letters (got {{passwordControl.errors?.passwordTooShort.actualLength}})
+      </div>
+    </div>
+    <div class="field">
+      <label for="confirmpassword">confirm password:</label>
+      <input type="password" id="confirmpassword" formControlName='confirmPassword'>
+    </div>
+    <div class='ui pointing red basic label' *ngIf=' usertje.get("passwordGroup").errors?.passwordsDiffer && usertje.get("passwordGroup").get("confirmPassword").touched  &&usertjeuser.get("passwordGroup").get("password").touched'>
+     the two passwords should be the same
+    </div>
+  </div>
+  <button type='submit' [disabled]='!usertje.valid' class="ui positive right floated button">register</button>
+</form>
 <a class='item' routerLink="/login" >Login</a>
  
