@@ -77,12 +77,12 @@ export class RegisterComponent implements OnInit {
 
   onSubmit() {
     console.log("klm");
-    console.log(this.usertje.value.username);
+    console.log(this.usertje.value.passwordGroup.password);
     var user = new User();
     user.name = 'naam';
     user.username = this.usertje.value.username;
-    user.password = this.usertje.value.password;
-    user.passwordConfirm = this.usertje.value.password;
+    user.password = this.usertje.value.passwordGroup.password;
+    user.passwordConfirm = this.usertje.value.passwordGroup.password;
     console.log(user);
     this.createUser(user);
   }
