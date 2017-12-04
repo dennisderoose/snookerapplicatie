@@ -35,6 +35,7 @@ export class RegisterComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.createHandler = new Function;
     this.createNewUser();
   }
 
