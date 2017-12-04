@@ -82,7 +82,7 @@ export class RegisterComponent implements OnInit {
     user.name = 'naam';
     user.username = this.usertje.value.username;
     user.password = this.usertje.value.passwordGroup.password;
-    user.passwordConfirm = this.usertje.value.passwordGroup.password;
+    user.passwordConfirm = this.usertje.value.passwordGroup.confirmPassword;
     console.log(user);
     this.createUser(user);
   }
