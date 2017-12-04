@@ -76,6 +76,8 @@ export class RegisterComponent implements OnInit {
   }*/
 
   onSubmit() {
+    console.log("klm");
+    console.log(this.usertje.value.username);
     var user = new User();
     user.name = 'naam';
     user.username = this.usertje.value.username;
