@@ -17,8 +17,8 @@
   <div class="field">
     <label for="username">username:</label>
     <input type="text" id="username" formControlName='username' required>
-    <div class='ui pointing red basic label' *ngIf='username.errors && usertje.get("username").touched'>
-      <p *ngIf="username.errors.required">
+    <div class='ui pointing red basic label' *ngIf='usertje.errors && usertje.get("username").touched'>
+      <p *ngIf="usertje.errors.required">
         The name is required
     </p>
     </div>
