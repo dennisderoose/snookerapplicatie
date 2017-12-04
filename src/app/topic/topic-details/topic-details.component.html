@@ -20,7 +20,7 @@
     </button>-->  
 <!--  </form>
 -->
-  <div *ngIf="topic" class="row">
+  <div *ngIf="selectedTopic" class="row">
       <form class="ui large form segment">
         <h3 class="ui header">Voeg een nieuw topic toe</h3>
         <div class="field">
@@ -28,7 +28,7 @@
           <input class="form-control" name="topic-name" [(ngModel)]="selectedTopic.name" placeholder="Topic"/>   
           <label for="topic-vraag">Vraag:</label>
           <input class="form-control" name="topic-vraag"placeholder="Vraag"/>              
-          <button class="btn btn-primary" *ngIf="!topic.name" (click)="createTopic(topic)">Create</button>
+          <button class="btn btn-primary" *ngIf="!selectedTopic._id" (click)="createTopic(topic)">Create</button>
         </div>
       </form>
     </div>
@@ -41,7 +41,7 @@
           <input class="form-control" name="topic-name" [(ngModel)]="selectedTopic.name" placeholder="Topic"/>   
           <label for="topic-vraag">Vraag:</label>
           <input class="form-control" name="topic-vraag"placeholder="Vraag"/>              
-          <button class="btn btn-primary" *ngIf="!topic.name" (click)="createTopic(topic)">Create</button>
+          <button class="btn btn-primary" *ngIf="!selectedTopic._id" (click)="createTopic(topic)">Create</button>
         </div>
       </form>
     </div>
