@@ -12,17 +12,14 @@
     </div>
   </form>hlm
 </div>-->
-<form [formGroup]='usertje' (ngSubmit)='onSubmit()' name="register" class="ui large form segment">
+<form [formGroup]='usertje' (ngSubmit)='onSubmit()' class="ui large form segment">
   <h3 class="ui header">register new user</h3>
   <div class="field">
     <label for="username">username:</label>
-    <input type="text" id="username" formControlName='username' ng-required='!usertje.username'>
-    <p ng-show='register.$error.required'>
-      Email OR Phone Required
-    </p>
-    <!--<div class='ui pointing red basic label' *ngIf='usertje.get("username").errors?.required && usertje.get("username").touched'>
+    <input type="text" id="username" formControlName='username'>
+    <div class='ui pointing red basic label' *ngIf='usertje.get("username").touched'>
       a username is required
-    </div>-->
+    </div>
     <!--<div class='ui pointing red basic label' *ngIf='usertje.get("username").errors?.minlength && usertje.get("username").touched'>
       the username should be at least {{user.get("username").errors?.minlength.requiredLength }} letters
     </div>
