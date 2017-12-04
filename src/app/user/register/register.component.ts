@@ -83,6 +83,7 @@ export class RegisterComponent implements OnInit {
     user.username = this.usertje.value.username;
     user.password = this.usertje.value.password;
     user.passwordConfirm = this.usertje.value.password;
+    console.log(user);
     this.createUser(user);
   }
 
