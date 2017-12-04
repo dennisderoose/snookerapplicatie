@@ -41,11 +41,11 @@ export class RegisterComponent implements OnInit {
 
   createUser(user: User) {
     console.log("f");
-    user = new User();
-    user.name = 'naam';
-    user.username = this.selectedUser.username;
-    user.password = this.selectedUser.password;
-    user.passwordConfirm = this.selectedUser.passwordConfirm;
+    //user = new User();
+    //user.name = 'naam';
+    //user.username = this.selectedUser.username;
+    //user.password = this.selectedUser.password;
+    //user.passwordConfirm = this.selectedUser.passwordConfirm;
     this.userService.createUser(user).then((newUser: User) => {
       this.createHandler(newUser);
     });
