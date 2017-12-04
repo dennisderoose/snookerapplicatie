@@ -3,7 +3,7 @@ import { User } from '../user.model';
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
 import { AbstractControl, FormBuilder, FormGroup, ValidatorFn, Validators, FormControl } from '@angular/forms';
-/*
+
 function passwordValidator(length: number): ValidatorFn {
   return (control: AbstractControl): { [key: string]: any } => {
     return control.value.length < length ? { 'passwordTooShort': { requiredLength: length, actualLength: control.value.length } } : null;
@@ -15,7 +15,7 @@ function comparePasswords(control: AbstractControl): { [key: string]: any } {
   const confirmPassword = control.get('confirmPassword');
   return password.value === confirmPassword.value ? null : { 'passwordsDiffer': true };
 }
-*/
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -59,7 +59,7 @@ export class RegisterComponent implements OnInit {
         confirmPassword: ['', Validators.required]
       }, { validator: comparePasswords })
     });
-
+    this.user = new User();
     this.createHandler = new Function;
     this.createNewUser();
   }
