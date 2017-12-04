@@ -15,7 +15,7 @@ export class RegisterComponent implements OnInit {
   user: User;
 
   @Input()
-  createHandler: Function;
+  createHandler;
 
   users: User[];
   selectedUser: User;
@@ -24,6 +24,7 @@ export class RegisterComponent implements OnInit {
 
   createUser(user: User) {
     console.log("f");
+    this.createHandler = Function;
     user = new User();
     user.name = 'naam';
     user.username = this.selectedUser.username;
