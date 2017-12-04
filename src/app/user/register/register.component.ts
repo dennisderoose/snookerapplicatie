@@ -25,7 +25,6 @@ export class RegisterComponent implements OnInit {
   createUser(user: User) {
     console.log("f");
     user = new User();
-    this.createHandler = new Function();
     user.name = 'naam';
     user.username = this.selectedUser.username;
     user.password = this.selectedUser.password;
