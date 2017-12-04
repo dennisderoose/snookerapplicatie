@@ -21,6 +21,6 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log("gelukt");
+    this.router.navigate(['/topic/details']);
   }
 }
