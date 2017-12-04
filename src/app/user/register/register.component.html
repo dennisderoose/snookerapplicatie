@@ -17,10 +17,10 @@
   <div class="field">
     <label for="username">username:</label>
     <input type="text" id="username" formControlName='username' name="username">
-    <div class='ui pointing red basic label' *ngIf='usertje.errors.required && usertje.get("username").touched'>
-      <p *ngIf="usertje.errors.required">
+    <div class='ui pointing red basic label' *ngIf='usertje.errors && usertje.get("username").touched'>
+      <p *ngIf="!usertje.errors.required">
         The name is required
-    </p>
+      </p>
     </div>
     <!--<div class='ui pointing red basic label' *ngIf='usertje.get("username").errors?.minlength && usertje.get("username").touched'>
       the username should be at least {{user.get("username").errors?.minlength.requiredLength }} letters
