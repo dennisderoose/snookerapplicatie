@@ -31,9 +31,9 @@
     <div class="field">
       <label for="password">password:</label>
       <input type="password" id="password" formControlName='password'>
-      <!--<div class='ui pointing red basic label' *ngIf=' passwordControl.errors?.passwordTooShort && passwordControl.touched'>
-        password too short, please use at least {{passwordControl.errors?.passwordTooShort.requiredLength}} letters (got {{passwordControl.errors?.passwordTooShort.actualLength}})
-      </div>-->
+      <div class='ui pointing red basic label' *ngIf="passwordControl.hasError('passwordTooShort') && passwordControl.touched">
+        password too short, please use at least {{passwordControl.hasError('passwordTooShort').requiredLength}} letters (got {{passwordControl.hasError('passwordTooShort').actualLength}})
+      </div>
     </div>
     <div class="field">
       <label for="confirmpassword">confirm password:</label>
