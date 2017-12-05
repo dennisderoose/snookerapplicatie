@@ -21,7 +21,7 @@
       a username is required
     </div>
     <div class='ui pointing red basic label' *ngIf="usertje.get('username').hasError('minlength') && usertje.get('username').touched">
-      the username should be at least 4 letters
+      the username should be at least {{usertje.get("username").hasError('minlength').requiredLength }} letters
     </div>
     <!--<div class='ui pointing red basic label' *ngIf='usertje.get("username").errors?.userAlreadyExists && usertje.get("username").touched'>
       a user with that name already exists
