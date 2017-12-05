@@ -25,6 +25,7 @@ export class RegisterComponent implements OnInit {
   public usertje: FormGroup;
 
   get passwordControl(): FormControl {
+    console.log(this.usertje.get('passwordGroup').get('password'));
     return <FormControl>this.usertje.get('passwordGroup').get('password');
   }
 
