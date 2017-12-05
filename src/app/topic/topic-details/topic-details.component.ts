@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Topic } from '../topic.model';
 import { TopicService } from '../topic.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-topic-details',
@@ -17,7 +18,7 @@ export class TopicDetailsComponent implements OnInit {
   topics: Topic[];
   selectedTopic: Topic;
 
-  constructor(private topicService: TopicService) { }
+  constructor(private router: Router, private topicService: TopicService) { }
 
   createTopic(topic: Topic) {
     topic = new Topic();
