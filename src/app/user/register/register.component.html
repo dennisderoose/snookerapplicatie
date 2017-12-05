@@ -20,10 +20,10 @@
     <div class='ui pointing red basic label' *ngIf="usertje.get('username').hasError('required') && usertje.get('username').touched">
       a username is required
     </div>
-    <!--<div class='ui pointing red basic label' *ngIf='usertje.get("username").errors?.minlength && usertje.get("username").touched'>
-      the username should be at least {{user.get("username").errors?.minlength.requiredLength }} letters
+    <div class='ui pointing red basic label' *ngIf="usertje.get('username').hasError('minlength') && usertje.get('username').touched">
+      the username should be at least {{user.get("username").hasError('minlength').requiredLength }} letters
     </div>
-    <div class='ui pointing red basic label' *ngIf='usertje.get("username").errors?.userAlreadyExists && usertje.get("username").touched'>
+    <!--<div class='ui pointing red basic label' *ngIf='usertje.get("username").errors?.userAlreadyExists && usertje.get("username").touched'>
       a user with that name already exists
     </div>-->
   </div>
