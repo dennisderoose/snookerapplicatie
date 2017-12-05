@@ -32,7 +32,7 @@
       <label for="password">password:</label>
       <input type="password" id="password" formControlName='password'>
       <div class='ui pointing red basic label' *ngIf="passwordControl.hasError('passwordTooShort') && passwordControl.touched">
-        password too short, please use at least {{passwordControl.hasError('passwordTooShort').requiredLength}} letters (got {{passwordControl.hasError('passwordTooShort').actualLength}})
+        password too short, please use at least {{usertje.get('passwordGroup').get('password').hasError('passwordTooShort').requiredLength}} letters (got {{passwordControl.hasError('passwordTooShort').actualLength}})
       </div>
     </div>
     <div class="field">
