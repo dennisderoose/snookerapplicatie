@@ -85,7 +85,7 @@ export class RegisterComponent implements OnInit {
     user.passwordConfirm = this.usertje.value.passwordGroup.confirmPassword;
     console.log(user);
     this.createUser(user);
-    this.router.navigate(['/login']);
+    this.router.navigate(['../login']);
   }
 
 
