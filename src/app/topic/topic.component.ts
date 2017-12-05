@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Topic } from '../topic/topic.model';
 import { TopicService } from '../topic/topic.service';
+import { Router } from '@angular/router';
 import 'rxjs/add/operator/map'
 
 @Component({
@@ -14,7 +15,7 @@ export class TopicComponent implements OnInit {
   topics: Topic[]
   selectedTopic: Topic
 
-  constructor(private topicService: TopicService) { }
+  constructor(private router: Router, private topicService: TopicService) { }
 
   ngOnInit(): void {
     this.createNewTopic();
@@ -61,5 +62,7 @@ export class TopicComponent implements OnInit {
     this.selectTopic(topic);
     return this.topics;
   }
-
+  onSubmit() {
+    this.router.navigate(['../topic-details']);
+  }
 }
