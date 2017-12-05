@@ -39,9 +39,9 @@
       <label for="confirmpassword">confirm password:</label>
       <input type="password" id="confirmpassword" formControlName='confirmPassword'>
     </div>
-    <!--<div class='ui pointing red basic label' *ngIf=' usertje.get("passwordGroup").errors?.passwordsDiffer && usertje.get("passwordGroup").get("confirmPassword").touched  &&usertjeuser.get("passwordGroup").get("password").touched'>
+    <div class='ui pointing red basic label' *ngIf="usertje.get('passwordGroup').hasError(passwordsDiffer) && usertje.get('passwordGroup').get('confirmPassword').touched  &&usertjeuser.get('passwordGroup').get('password').touched">
      the two passwords should be the same
-    </div>-->
+    </div>
   </div>
   <button type='submit' class="ui positive right floated button">register</button>
 </form>
