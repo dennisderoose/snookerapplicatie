@@ -9,6 +9,7 @@ import { CommonModule } from '@angular/common';
 import { HttpModule} from '@angular/http';
 import { RegisterComponent } from './register/register.component';
 import { LogoutComponent } from './logout/logout.component';
+import { TopicComponent } from '../topic/topic.component';
 import { UserComponent } from 'app/user/user.component';
 import { UserService } from 'app/user/user.service';
 
@@ -16,7 +17,8 @@ const routes = [
   { path: 'login', component: LoginComponent },
   { path: 'logout', component: LogoutComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'user', component: UserComponent }
+  { path: 'user', component: UserComponent },
+  { path: 'topic', component: TopicComponent }
 ];
 
 @NgModule({
