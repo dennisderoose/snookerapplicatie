@@ -26,6 +26,7 @@ export class TopicDetailsComponent implements OnInit {
     this.topicService.createTopic(topic).then((newTopic: Topic) => {
       this.createHandler(newTopic);
     });
+    //hkln
     this.router.navigate(['../topic']);
   }
 
