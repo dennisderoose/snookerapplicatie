@@ -9,7 +9,7 @@ app.listen(process.env.PORT || 8080);
 app.get('/*', function(req, res) {
     res.sendFile(path.join(__dirname + '/dist/index.html'));
 });*/
-
+/*
 var express = require("express");
 var path = require("path");
 var bodyParser = require("body-parser");
@@ -57,7 +57,7 @@ function handleError(res, reason, message, code) {
  *    GET: finds all contacts
  *    POST: creates a new contact
  */
-
+/*
 app.get("/webapptaak/topics", function(req, res) {
   console.log(db);
   db.collection(TOPICS_COLLECTION).find({}).toArray(function(err, docs) {

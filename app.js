@@ -4,11 +4,17 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
 let mongoose = require('mongoose');
+let passport = require('passport');
 
-mongoose.connect('mongodb://Dennisder:ikhouvansteaktartaar1@ds113136.mLab.com:13136/webapptaak');
-require('./models/Topic');
+require('./models/User');
+require('./models/Recipe');
+require('./models/Ingredient');
+
+
+require('./config/passport');
+
+mongoose.connect("mongodb://Dennisder:denny1997@ds113136.mlab.com:13136/webapptaak", { useMongoClient: true });
 
 var index = require('./routes/index');
 var users = require('./routes/users');
@@ -30,6 +36,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/users', users);
 
+app.use(express.static(__dirname + '/dist'));
+
+app.all('*', (req, res) => {
+  const indexFile = `${path.join(__dirname, 'dist')}/index.html`;
+  res.status(200).sendFile(indexFile);
+}); 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');

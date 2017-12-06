@@ -1,27 +1,28 @@
-//import { AuthGuardService } from './../user/auth-guard.service';
+import { AuthGuardService } from './../user/auth-guard.service';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes} from '@angular/router';
+import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
 
 import { PageNotFoundComponent } from '../page-not-found/page-not-found.component';
+import { TopicComponent} from './../topic/topic/topic.component';
 // import { RecipeListComponent } from './../recipe-list/recipe-list.component';
 // import { AddRecipeComponent } from './../add-recipe/add-recipe.component';
 
 const appRoutes: Routes = [
-  //{
-  //  path: 'recipe',
-  //  canActivate: [ AuthGuardService ]
-  //},
-  { path: '', redirectTo: 'login', pathMatch: 'full'},
-  { path: '**', component: PageNotFoundComponent}
+  /*{
+    path: 'recipe',
+    canActivate: [AuthGuardService],
+    // data: { preload: true },
+    loadChildren: '../recipe/recipe.module#RecipeModule'
+  },*/
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes, { preloadingStrategy: PreloadAllModules })
   ],
   declarations: [],
-  exports: [
-    RouterModule
-  ]
+  exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

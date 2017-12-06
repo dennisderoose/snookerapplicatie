@@ -1,7 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Topic } from '../topic.model';
-import { TopicService } from '../topic.service';
-import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-topic-details',
@@ -9,49 +6,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./topic-details.component.css']
 })
 export class TopicDetailsComponent implements OnInit {
-  @Input()
-  topic: Topic;
 
-  @Input()
-  createHandler: Function;
-
-  topics: Topic[];
-  selectedTopic: Topic;
-
-  constructor(private router: Router, private topicService: TopicService) { }
-
-  createTopic(topic: Topic) {
-    topic = new Topic();
-    topic.name = this.selectedTopic.name;
-    this.topicService.createTopic(topic).then((newTopic: Topic) => {
-      this.createHandler(newTopic);
-    });
-    //hkln
-    this.router.navigate(['../topic']);
-  }
+  constructor() { }
 
   ngOnInit() {
-    this.createHandler = new Function;
-    this.topic = new Topic();
-    this.createNewTopic();
   }
 
-  private getIndexOfContact = (topicId: String) => {
-    return this.topics.findIndex((topic) => {
-      return topic._id === topicId;
-    });
-  }
-
-  selectTopic(topic: Topic) {
-    this.selectedTopic = topic
-  }
-
-  createNewTopic(): void {
-    var topic: Topic = {
-      name: ''
-    };
-
-    // By default, a newly-created contact will have the selected state.
-    this.selectTopic(topic);
-  } 
 }

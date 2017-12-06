@@ -1,8 +1,10 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { User } from '../user.model';
-import { UserService } from '../user.service';
+import { Observable } from 'rxjs/Rx';
+import { AuthenticationService } from '../authentication.service';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AbstractControl, FormBuilder, FormGroup, ValidatorFn, Validators, FormControl } from '@angular/forms';
+
+
 
 function passwordValidator(length: number): ValidatorFn {
   return (control: AbstractControl): { [key: string]: any } => {
@@ -16,52 +18,30 @@ function comparePasswords(control: AbstractControl): { [key: string]: any } {
   return password.value === confirmPassword.value ? null : { 'passwordsDiffer': true };
 }
 
+
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  public usertje: FormGroup;
+  public user: FormGroup;
 
   get passwordControl(): FormControl {
-    return <FormControl>this.usertje.get('passwordGroup').get('password');
+    return <FormControl>this.user.get('passwordGroup').get('password');
   }
 
-  @Input()
-  user: User;
-
-  @Input()
-  createHandler: Function;
-
-  users: User[];
-  selectedUser: User;
-
-  constructor(private userService: UserService, private router: Router, private fb: FormBuilder) { }
-
-  createUser(user: User) {
-    console.log("f");
-    //user = new User();
-    //user.name = 'naam';
-    //user.username = this.selectedUser.username;
-    //user.password = this.selectedUser.password;
-    //user.passwordConfirm = this.selectedUser.passwordConfirm;
-    this.userService.createUser(user).then((newUser: User) => {
-      this.createHandler(newUser);
-    });
-  }
+  constructor(private authenticationService: AuthenticationService, private router: Router, private fb: FormBuilder) { }
 
   ngOnInit() {
-    this.usertje = this.fb.group({
+    this.user = this.fb.group({
       username: ['', [Validators.required, Validators.minLength(4)]],
       passwordGroup: this.fb.group({
         password: ['', [Validators.required, passwordValidator(12)]],
         confirmPassword: ['', Validators.required]
       }, { validator: comparePasswords })
     });
-    this.user = new User();
-    this.createHandler = new Function;
-    this.createNewUser();
   }
 /*
   serverSideValidateUsername(): ValidatorFn {
@@ -76,45 +56,11 @@ export class RegisterComponent implements OnInit {
   }*/
 
   onSubmit() {
-    console.log("klm");
-    console.log(this.usertje.value.passwordGroup.password);
-    var user = new User();
-    user.name = 'naam';
-    user.username = this.usertje.value.username;
-    user.password = this.usertje.value.passwordGroup.password;
-    user.passwordConfirm = this.usertje.value.passwordGroup.confirmPassword;
-    console.log(user);
-    this.createUser(user);
-    this.router.navigate(['../login']);
-  }
-
-
-  private getIndexOfContact = (topicId: String) => {
-    return this.users.findIndex((topic) => {
-      return topic._id === topicId;
+    this.authenticationService.register(this.user.value.username, this.passwordControl.value).subscribe(val => {
+      if (val) {
+        this.router.navigate(['/recipe/list']);
+      }
     });
   }
-
-  selectUser(user: User) {
-    this.selectedUser = user
-  }
-
-  createNewUser(): void {
-    var user: User = {
-      name: '',
-      username: '',
-      password: '',
-      passwordConfirm: '',
-      hash: '',
-      salt: ''
-    };
-
-    // By default, a newly-created contact will have the selected state.
-    this.selectUser(user);
-  }
-/*
-  onSubmit() {
-    console.log("oke");
-  }*/
-
 }
+
