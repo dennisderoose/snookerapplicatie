@@ -3,7 +3,7 @@ var router = express.Router();
 let mongoose = require("mongoose");
 let jwt = require("express-jwt");
 
-let Recipe = mongoose.model("Recipe");
+let Topic = mongoose.model("Topic");
 let Ingredient = mongoose.model("Ingredient");
 
 let auth = jwt({
@@ -12,41 +12,41 @@ let auth = jwt({
 });
 
 /* GET home page. */
-router.get("/API/recipes/", function(req, res, next) {
-  let query = Recipe.find().populate("ingredients");
-  query.exec(function(err, recipes) {
+router.get("/webapptaak/topics/", function(req, res, next) {
+  console.log("ja");
+  let query = Topic.find();
+  query.exec(function(err, topics) {
     if (err) return next(err);
-    res.json(recipes);
+    res.json(topics);
   });
 });
 
-router.post("/API/recipes/", auth, function(req, res, next) {
-  let recipe = new Recipe({
-    name: req.body.name,
-    directions: req.body.directions
+router.post("/webapptaak/topics/", auth, function(req, res, next) {
+  let topic = new Topic({
+    name: req.body.name
   });
-  recipe.save(function(err, post) {
+  topic.save(function(err, post) {
     if (err) {
       return next(err);
     }
-    res.json(recipe);
+    res.json(topic);
   });
 });
 
-router.param("recipe", function(req, res, next, id) {
-  let query = Recipe.findById(id);
-  query.exec(function(err, recipe) {
+router.param("topic", function(req, res, next, id) {
+  let query = Topic.findById(id);
+  query.exec(function(err, topic) {
     if (err) {
       return next(err);
     }
-    if (!recipe) {
+    if (!topic) {
       return next(new Error("not found " + id));
     }
-    req.recipe = recipe;
+    req.topic = topic;
     return next();
   });
 });
-
+/*
 router.param("ingredient", function(req, res, next, id) {
   let query = Ingredient.findById(id);
   query.exec(function(err, ing) {
@@ -101,6 +101,6 @@ router.post("/API/recipe/:recipe/ingredients", function(req, res, next) {
       res.json(ingredient);
     });
   });
-});
+});*/
 
 module.exports = router;

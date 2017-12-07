@@ -8,7 +8,7 @@ let mongoose = require('mongoose');
 let passport = require('passport');
 
 require('./models/User');
-require('./models/Recipe');
+require('./models/Topic');
 require('./models/Ingredient');
 
 
@@ -32,9 +32,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(passport.initialize());
+
 
 app.use('/', index);
-app.use('/users', users);
+app.use('/webapptaak/users', users);
 
 app.use(express.static(__dirname + '/dist'));
 

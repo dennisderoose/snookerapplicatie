@@ -7,6 +7,8 @@ import { TopicDetailsComponent } from 'app/topic/topic-details/topic-details.com
 import { TopicService } from 'app/topic/topic.service';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
+import { TopicDataService } from './topic-data.service';
+import { TopicResolver } from './topic-resolver.service';
 
 
 const routes = [
@@ -26,7 +28,9 @@ const routes = [
     RouterModule.forChild(routes)
   ],
   providers: [
-      TopicService
+    TopicDataService,
+    TopicResolver,
+    TopicService
   ]
 })
 export class TopicModule { }

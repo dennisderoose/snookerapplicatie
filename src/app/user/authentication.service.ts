@@ -5,13 +5,14 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class AuthenticationService {
-  private _url = '/API/users';
+  private _url = '/webapptaak/users';
   private _user$: BehaviorSubject<string>;
 
   public redirectUrl: string;
 
   constructor(private http: Http) {
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    console.log(currentUser);
     this._user$ = new BehaviorSubject<string>(currentUser && currentUser.username);
   }
 
@@ -46,6 +47,8 @@ export class AuthenticationService {
   }
 
   register(username: string, password: string): Observable<boolean> {
+    console.log(username);
+    console.log(password);
     return this.http.post(`${this._url}/register`, { username: username, password: password })
       .map(res => res.json()).map(res => {
         const token = res.token;
