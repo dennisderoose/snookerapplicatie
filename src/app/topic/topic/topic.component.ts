@@ -12,12 +12,14 @@ import { FormGroup, FormBuilder, Validators, FormArray } from '@angular/forms';
 export class TopicComponent implements OnInit {
   private _topics: Topic[];
   public topictoevoegen: FormGroup;
+  public uitloggenForum: FormGroup;
   
     constructor(private fb: FormBuilder, private _topicDataService: TopicDataService, private _router: Router) {
     }
   
     ngOnInit() {
-      this.topictoevoegen = this.fb.group({});      
+      this.topictoevoegen = this.fb.group({}); 
+      this.uitloggenForum = this.fb.group({});     
       this._topicDataService.topics.subscribe(items => this._topics = items);
     }
     get topics() {
@@ -33,5 +35,8 @@ export class TopicComponent implements OnInit {
     onSubmit() {
           this._router.navigate(['topic-details']);
     }
+    uitloggen() {
+      this._router.navigate(['logout']);
+    }    
 
 }

@@ -30,7 +30,7 @@ export class TopicDetailsComponent implements OnInit {
     const topic = new Topic(this.topic.value.name);
     this._topicDataService.addNewTopic(topic).subscribe(item => {
     });
-    // this.newRecipe.emit(recipe);
+    this._router.navigate(['topic']);
   }
 
   
