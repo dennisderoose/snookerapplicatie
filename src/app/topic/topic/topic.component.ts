@@ -55,7 +55,6 @@ export class TopicComponent implements OnInit {
       const opmerking = new Opmerking("klm");
       nextArray.push(opmerking);
       topic.opmerkingen = nextArray;
-      console.log(topic);
       this._topicDataService.addNewTopic(topic).subscribe(item => {
         const opmerking = topic.opmerkingen.map(opmerking =>
           this._topicDataService.addOpmerkingToTopic(opmerking, item));   

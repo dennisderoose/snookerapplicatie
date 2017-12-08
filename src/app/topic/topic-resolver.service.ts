@@ -9,7 +9,6 @@ export class TopicResolver implements Resolve< Topic > {
     constructor(private topicService: TopicDataService) {}
 
     resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Topic> {
-        console.log("topic");
         return this.topicService.getTopic(route.params['id']);
     }
 }

@@ -6,7 +6,6 @@ import { AbstractControl, FormBuilder, FormGroup, ValidatorFn, Validators } from
 
 function passwordValidator(): ValidatorFn {
   return (control: AbstractControl): { [key: string]: any } => {
-    console.log(control.value);
     return control.value.length < 12 ? { 'passwordTooShort': { value: control.value.length } } : null;
   };
 }
@@ -30,10 +29,8 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.user.value.username);
     this.authService.login(this.user.value.username, this.user.value.password).subscribe(val => {
       if (val) {
-        console.log(val);
         if (this.authService.redirectUrl) {
           this.router.navigateByUrl(this.authService.redirectUrl);
           this.authService.redirectUrl = undefined;
