@@ -4,16 +4,8 @@ import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
 
 import { PageNotFoundComponent } from '../page-not-found/page-not-found.component';
 import { TopicComponent} from './../topic/topic/topic.component';
-// import { RecipeListComponent } from './../recipe-list/recipe-list.component';
-// import { AddRecipeComponent } from './../add-recipe/add-recipe.component';
 
 const appRoutes: Routes = [
-  /*{
-    path: 'recipe',
-    canActivate: [AuthGuardService],
-    // data: { preload: true },
-    loadChildren: '../recipe/recipe.module#RecipeModule'
-  },*/
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
 ];

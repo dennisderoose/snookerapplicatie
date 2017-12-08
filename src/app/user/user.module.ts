@@ -11,7 +11,6 @@ import { LogoutComponent } from './logout/logout.component';
 import { TopicComponent } from './../topic/topic/topic.component';
 import { TopicDataService } from './../topic/topic-data.service';
 import { TopicResolver } from './../topic/topic-resolver.service';
-import { TopicService } from './../topic/topic.service';
 import { TopicDetailsComponent } from './../topic/topic-details/topic-details.component';
 
 const routes = [
@@ -40,8 +39,7 @@ const routes = [
     AuthenticationService,
     AuthGuardService,
     TopicDataService,
-    TopicResolver,
-    TopicService
+    TopicResolver
   ],
   exports: [
   ]

@@ -3,6 +3,11 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { Topic } from '../topic.model';
 import { Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators, FormArray } from '@angular/forms';
+import { Opmerking } from 'app/topic/opmerking/opmerking.model';
+
+import { Observable } from 'rxjs/Rx';
+import 'rxjs/add/operator/debounceTime';
+import 'rxjs/add/operator/distinctUntilChanged';
 
 @Component({
   selector: 'app-topic',
@@ -13,6 +18,7 @@ export class TopicComponent implements OnInit {
   private _topics: Topic[];
   public topictoevoegen: FormGroup;
   public uitloggenForum: FormGroup;
+  public opmerkingtoevoegen: FormGroup;
   
     constructor(private fb: FormBuilder, private _topicDataService: TopicDataService, private _router: Router) {
     }
@@ -20,6 +26,10 @@ export class TopicComponent implements OnInit {
     ngOnInit() {
       this.topictoevoegen = this.fb.group({}); 
       this.uitloggenForum = this.fb.group({});     
+      this.opmerkingtoevoegen = this.fb.group({
+        opmerkingname: ['', [Validators.required, Validators.minLength(3)]],
+        topic: ['', [Validators.required, Validators.minLength(3)]]
+      });  
       this._topicDataService.topics.subscribe(items => this._topics = items);
     }
     get topics() {
@@ -33,10 +43,47 @@ export class TopicComponent implements OnInit {
     }
 
     onSubmit() {
-          this._router.navigate(['topic-details']);
+      this._router.navigate(['topic-details']);
     }
     uitloggen() {
       this._router.navigate(['logout']);
-    }    
+    } 
 
+    opmerking() {      
+      let nextArray = [];
+      const topic = new Topic("kop");
+      const opmerking = new Opmerking("klm");
+      nextArray.push(opmerking);
+      topic.opmerkingen = nextArray;
+      console.log(topic);
+      this._topicDataService.addNewTopic(topic).subscribe(item => {
+        const opmerking = topic.opmerkingen.map(opmerking =>
+          this._topicDataService.addOpmerkingToTopic(opmerking, item));   
+          
+          Observable.forkJoin(...opmerking).subscribe( (opmerkingen: Opmerking[]) => {
+            for (const ing of opmerkingen) {
+              item.addIngredient(ing);
+            }          
+          });
+      });  
+      console.log("hln");
+      
+/*
+      this._recipeDataService.addNewRecipe(recipe).subscribe(item => {
+        const ingr = recipe.ingredients.map(ing =>
+          this._recipeDataService.addIngredientToRecipe(ing, item));
+  
+        Observable.forkJoin(...ingr).subscribe( (ingredients: Ingredient[]) => {
+          for (const ing of ingredients) {
+            item.addIngredient(ing);
+          }
+          // return this._recipes.push(item)
+          // return item;
+          this._router.navigate(['recipe-list']);
+        }
+        );
+      });      
+
+*/
+    }   
 }

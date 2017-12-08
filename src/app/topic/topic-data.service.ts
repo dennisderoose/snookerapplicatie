@@ -1,4 +1,5 @@
 import { AuthenticationService } from '../user/authentication.service';
+import { Opmerking } from './opmerking/opmerking.model';
 import { Injectable } from '@angular/core';
 import { Topic } from './topic.model';
 import { Http, Response, Headers } from '@angular/http';
@@ -25,12 +26,18 @@ export class TopicDataService {
   }
 
   addNewTopic(rec): Observable<Topic> {
+    console.log("rec");
     return this.http.post(`${this._appUrl}/topics`, rec, { headers: new Headers({Authorization: `Bearer ${this.auth.token}`}) })
       .map(res => res.json()).map(item => Topic.fromJSON(item));
   }
 
   removeTopic(rec) {
     return this.http.delete(`${this._appUrl}/topic/${rec.id}`).map(res => res.json()).map(item => Topic.fromJSON(item));
+  }
+
+  addOpmerkingToTopic(opmerking: Opmerking, topic: Topic): Observable<Opmerking> {
+    return this.http.post(`${this._appUrl}/topic/${topic.id}/opmerkingen`, opmerking)
+      .map(res => res.json()).map(item => Opmerking.fromJSON(item));
   }
 
 }

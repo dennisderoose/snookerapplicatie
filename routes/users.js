@@ -7,7 +7,7 @@ let User = mongoose.model('User');
 
 router.post('/register', function(req, res, next){
   if(!req.body.username || !req.body.password){
-    return res.status(400).json({message: 'Please fill out all fields'});
+    return res.status(400).json({message: 'Vul alle velden in alstublieft'});
   }
   var user = new User();
   user.username = req.body.username;
@@ -20,7 +20,7 @@ router.post('/register', function(req, res, next){
 
 router.post('/login', function(req, res, next){
   if(!req.body.username || !req.body.password){
-    return res.status(400).json({message: 'Please fill out all fields'});
+    return res.status(400).json({message: 'Vul alle velden in alstublieft'});
   }
   passport.authenticate('local', function(err, user, info){
     if(err){ return next(err); }
@@ -33,7 +33,6 @@ router.post('/login', function(req, res, next){
 });
 
 router.post('/checkusername', function(req, res, next) {
-  // if (req.body.username) {
     User.find({username: req.body.username}, function(err, result) {
       if (result.length) {
         res.json({'username': 'alreadyexists'})
@@ -41,7 +40,6 @@ router.post('/checkusername', function(req, res, next) {
         res.json({'username': 'ok'})
       }
     });
-  // }
 });
 
 module.exports = router;

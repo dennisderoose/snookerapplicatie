@@ -43,17 +43,6 @@ export class RegisterComponent implements OnInit {
       }, { validator: comparePasswords })
     });
   }
-/*
-  serverSideValidateUsername(): ValidatorFn {
-    return (control: AbstractControl): Observable<{ [key: string]: any }> => {
-      return this.authenticationService.checkUserNameAvailability(control.value).map(available => {
-        if (available) {
-          return null;
-        }
-        return { userAlreadyExists: true };
-      })
-    };
-  }*/
 
   onSubmit() {
     this.authenticationService.register(this.user.value.username, this.passwordControl.value).subscribe(val => {

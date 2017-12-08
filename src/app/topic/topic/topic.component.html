@@ -1,18 +1,3 @@
-<!--<ul class="list-group">
-  <li class="list-group-item"
-    *ngFor="let topic of topics"
-    (click)="selectTopic(topic)"
-    [class.active]="topic === selectedTopic">
-    {{topic.name}}
-  </li>hln
-</ul>-->
-<!--
-<div class="col-md-5 col-md-offset-2">
-  <app-topic-details
-    [topic]="selectTopic"
-    [createHandler]="addTopic">
-  </app-topic-details>
-</div>-->
 <h1>
   Forum voor studenten
 </h1>
@@ -25,43 +10,15 @@
 <br>
 <br>
 <br>
-<div class="ui segment" id='topic-component' *ngFor="let topic of _topics">
-  <h3 class="ui header">{{topic?._name}}</h3>
-  <div class="field">
-  <label for="Antwoord">Opmerking invullen:</label> 
-  <input name="Antwoord">
-  </div> 
-</div>
-
-
-<!--
-<form [formGroup]='recipe' (ngSubmit)='onSubmit()' class="ui large form segment error">
-  <button type='submit' class="ui positive right floated button">add</button>
-</form>-->
-
-<!--
-<button class="ui icon button" (click)="removeRecipe()"><i  class="trash outline icon"></i></button>
-</div>
-<div class="col-md-5 col-md-offset-2" *ngFor="let topic of topics">
-      <h3 class="ui header">{{topic.name}}</h3>
-      <div class="field">
-      <label for="Antwoord">Opmerking invullen:</label> 
-      <input name="Antwoord">
-      </div>
-  </div>-->
-<!--
-<form class="ui large form segment"> 
-  <h3 class="ui header">Wat is de oplossing van oefening 4</h3>
-  <div class="field">
-	<label for="Antwoord">Opmerking invullen:</label> 
-  <input name="Antwoord">
+<form [formGroup]='opmerkingtoevoegen' (ngSubmit)='opmerking()'>
+  <div class="ui segment" id='topic-component' *ngFor="let topic of _topics">
+    <h3 class="ui header" >{{topic?._name}}</h3>
+    <div class="field">
+    <input type="hidden" name="hide" formControlName='topic' value="{{topic?._name}}"/>
+    <label for="Opmerking">Opmerking invullen:</label> 
+    <input type="text" id="Opmerking" formControlName='opmerkingname'>
+    <button type='submit' class="ui positive right floated button">add</button>
+    </div> 
   </div>
 </form>
-<form class="ui large form segment">
-  <h3 class="ui header">Ik snap cosinus niet</h3>
-  <div class="field">
-	<label for="Antwoord">Opmerking invullen:</label> 
-  <input name="Antwoord">
-  </div> 
-</form>-->
 

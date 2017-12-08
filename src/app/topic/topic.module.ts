@@ -4,11 +4,11 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TopicComponent } from 'app/topic/topic/topic.component';
 import { TopicDetailsComponent } from 'app/topic/topic-details/topic-details.component';
-import { TopicService } from 'app/topic/topic.service';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { TopicDataService } from './topic-data.service';
 import { TopicResolver } from './topic-resolver.service';
+import { OpmerkingComponent } from './opmerking/opmerking.component';
 
 
 const routes = [
@@ -18,7 +18,8 @@ const routes = [
 @NgModule({
   declarations: [
     TopicComponent,
-    TopicDetailsComponent
+    TopicDetailsComponent,
+    OpmerkingComponent
   ],
   imports: [
     HttpModule,
@@ -29,8 +30,7 @@ const routes = [
   ],
   providers: [
     TopicDataService,
-    TopicResolver,
-    TopicService
+    TopicResolver
   ]
 })
 export class TopicModule { }
