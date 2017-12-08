@@ -51,7 +51,7 @@ export class TopicComponent implements OnInit {
 
     opmerking() {      
       let nextArray = [];
-      const topic = new Topic("kop");
+      const topic = new Topic("kop","hln");
       const opmerking = new Opmerking("klm");
       nextArray.push(opmerking);
       topic.opmerkingen = nextArray;
@@ -66,24 +66,5 @@ export class TopicComponent implements OnInit {
             }          
           });
       });  
-      console.log("hln");
-      
-/*
-      this._recipeDataService.addNewRecipe(recipe).subscribe(item => {
-        const ingr = recipe.ingredients.map(ing =>
-          this._recipeDataService.addIngredientToRecipe(ing, item));
-  
-        Observable.forkJoin(...ingr).subscribe( (ingredients: Ingredient[]) => {
-          for (const ing of ingredients) {
-            item.addIngredient(ing);
-          }
-          // return this._recipes.push(item)
-          // return item;
-          this._router.navigate(['recipe-list']);
-        }
-        );
-      });      
-
-*/
     }   
 }

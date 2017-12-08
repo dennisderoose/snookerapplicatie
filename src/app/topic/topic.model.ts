@@ -2,16 +2,18 @@ import { Opmerking } from './opmerking/opmerking.model';
 export class Topic {
     private _id: string;
     private _name: string;
+    private _vraag: string;
     private _opmerkingen: Opmerking[];    
 
     static fromJSON(json): Topic {
-        const rec = new Topic(json.name, json.opmerkingen);
+        const rec = new Topic(json.name, json.vraag, json.opmerkingen);
         rec._id = json._id;
         return rec;
     }
 
-    constructor(name: string, opmerkingen?: Opmerking[]) {
+    constructor(name: string, vraag: string, opmerkingen?: Opmerking[]) {
         this._name = name;
+        this._vraag = vraag;
         this._opmerkingen = opmerkingen || new Array<Opmerking>();        
     }
 
@@ -23,6 +25,13 @@ export class Topic {
     }
     set name(name: string) {
         this._name = name;
+    }
+
+    get vraag(): string {
+        return this.vraag;
+    }
+    set vraag(vraag: string) {
+        this._vraag = vraag;
     }
 
     set opmerkingen(opmerking: Opmerking[]) {
@@ -41,6 +50,7 @@ export class Topic {
         return {
             _id: this._id,
             name: this._name,
+            vraag: this._vraag,
             opmerkingen: this._opmerkingen
         };
     }

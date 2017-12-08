@@ -22,7 +22,8 @@ router.get("/webapptaak/topics/", function(req, res, next) {
 
 router.post("/webapptaak/topics/", auth, function(req, res, next) {
   let topic = new Topic({
-    name: req.body.name
+    name: req.body.name,
+    vraag: req.body.vraag
   });
   topic.save(function(err, post) {
     if (err) {

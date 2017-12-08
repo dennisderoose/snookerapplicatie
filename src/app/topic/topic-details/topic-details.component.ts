@@ -22,12 +22,13 @@ export class TopicDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.topic = this.fb.group({
-      name: ['', [Validators.required, Validators.minLength(2)]]
+      name: ['', [Validators.required, Validators.minLength(2)]],
+      vraag: ['', [Validators.required, Validators.minLength(2)]]
     });    
   }
 
   onSubmit() {
-    const topic = new Topic(this.topic.value.name);
+    const topic = new Topic(this.topic.value.name, this.topic.value.vraag);
     this._topicDataService.addNewTopic(topic).subscribe(item => {
     });
     this._router.navigate(['topic']);
