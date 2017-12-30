@@ -1,13 +1,15 @@
 import { TopicDataService } from '../topic-data.service';
-import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output, ElementRef, ViewChild } from '@angular/core';
 import { Topic } from '../topic.model';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators, FormArray } from '@angular/forms';
 import { Opmerking } from 'app/topic/opmerking/opmerking.model';
 
 import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
+import { ViewChildren } from '@angular/core/src/metadata/di';
+import { QueryList } from '@angular/core/src/linker/query_list';
 
 @Component({
   selector: 'app-topic',
@@ -15,15 +17,33 @@ import 'rxjs/add/operator/distinctUntilChanged';
   styleUrls: ['./topic.component.css']
 })
 export class TopicComponent implements OnInit {
+  @Output() model;
+
+  @ViewChildren("title") 
+  private elTitle : QueryList<any>; 
+
+  private sub: any;
+  private user: string;
+
   private _topics: Topic[];
   public topictoevoegen: FormGroup;
   public uitloggenForum: FormGroup;
   public opmerkingtoevoegen: FormGroup;
   
-    constructor(private fb: FormBuilder, private _topicDataService: TopicDataService, private _router: Router) {
+    constructor(private fb: FormBuilder, private _topicDataService: TopicDataService, private route: ActivatedRoute, private _router: Router) {
     }
+
   
     ngOnInit() {
+      this.sub = this.route
+      .queryParams
+      .subscribe(params => {
+        // Defaults to 0 if no query param provided.
+        this.user = params['user'] || "";
+      });
+
+
+
       this.topictoevoegen = this.fb.group({}); 
       this.uitloggenForum = this.fb.group({});     
       this.opmerkingtoevoegen = this.fb.group({
@@ -43,15 +63,52 @@ export class TopicComponent implements OnInit {
     }
 
     onSubmit() {
-      this._router.navigate(['topic-details']);
+      this._router.navigate(['topic-details'], { queryParams: { user: this.user} });
     }
     uitloggen() {
       this._router.navigate(['logout']);
     } 
 
-    opmerking() {      
+    opmerking(evnt) {
+      //console.log(this.elTitle.toArray); 
+      let teller = 0;
+      let value = "";
+      let name = "";
+      this.elTitle.forEach(function(element) {
+        if(element.nativeElement.value != "") {
+          value = element.nativeElement.value
+          name = element.nativeElement.name          
+          teller ++;
+        }
+
+      });
+      //updaten van json object
+      if(teller == 1) {
+        console.log(value);
+        console.log(name);
+
+        let topic;
+
+        
+        this._topics.forEach(function(element) {          
+          if(element.name == name) {
+            element.opmerkingen.push(new Opmerking(element.id,value));
+            topic = element;
+          }
+        });
+        console.log(topic);
+        
+        this._topicDataService.updateTopic(topic,topic.id);
+
+
+      }
+      /*for(var i=0; i<this.elTitle.length; i++) {7
+        
+      }*/
+      //console.log(this.elTitle.nativeElement.name);
+      console.log(this.opmerkingtoevoegen.value.opmerkingname);    
       let nextArray = [];
-      const topic = new Topic("kop","hln");
+      /*const topic = new Topic("kop","hln");
       const opmerking = new Opmerking("klm");
       nextArray.push(opmerking);
       topic.opmerkingen = nextArray;
@@ -64,6 +121,6 @@ export class TopicComponent implements OnInit {
               item.addIngredient(ing);
             }          
           });
-      });  
+      });*/  
     }   
 }

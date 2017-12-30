@@ -3,18 +3,26 @@ export class Opmerking {
     private _name: string;
 
     static fromJSON(json): Opmerking {
-        const rec = new Opmerking(json.name);
+        console.log(json);
+        const rec = new Opmerking(json.id,json.name);
         rec._id = json._id;
+
         return rec;
     }
 
-    constructor(name: string) {
+    constructor(id:string, name:string) {
+        this._id = id;
         this._name = name;
     }
 
     get id(): string {
         return this._id;
     }
+
+    set id(id: string) {
+        this._id = id;
+    }
+
     get name(): string {
         return this._name;
     }
@@ -23,6 +31,7 @@ export class Opmerking {
     }
 
     toJSON() {
+        console.log(this._name);
         return {
             _id: this._id,
             name: this._name

@@ -11,6 +11,8 @@ export class TopicDataService {
   private _appUrl = '/webapptaak';
   private _topics;
 
+  ///webapptaak/topics/:id
+
   constructor(private http: Http, private auth: AuthenticationService) {
   }
 
@@ -27,8 +29,23 @@ export class TopicDataService {
 
   addNewTopic(rec): Observable<Topic> {
     return this.http.post(`${this._appUrl}/topics`, rec, { headers: new Headers({Authorization: `Bearer ${this.auth.token}`}) })
-      .map(res => res.json()).map(item => Topic.fromJSON(item));
+    .map(res => res.json()).map(item => Topic.fromJSON(item));
   }
+
+  updateTopic(rec,id): Promise<Topic> {
+    console.log(rec.opmerkingen);
+    console.log(id);
+    return this.http.put(`${this._appUrl}/topics/${id}`, rec, { headers: new Headers({Authorization: `Bearer ${this.auth.token}`}) })
+    .toPromise()
+    .then(() => rec)
+    .catch(this.handleError);    
+  }
+
+  private handleError(error: any): Promise<any> {
+    console.error('An error occurred', error); // for demo purposes only
+    return Promise.reject(error.message || error);
+ }
+
 
   removeTopic(rec) {
     return this.http.delete(`${this._appUrl}/topic/${rec.id}`).map(res => res.json()).map(item => Topic.fromJSON(item));
