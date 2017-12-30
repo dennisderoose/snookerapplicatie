@@ -14,7 +14,7 @@ require('./models/Opmerking');
 
 require('./config/passport');
 
-mongoose.connect("mongodb://Dennisder:denny1997@ds113136.mlab.com:13136/webapptaak", { useMongoClient: true });
+mongoose.connect("mongodb://Dennisder:denny1997@ds131997.mlab.com:31997/snookerapplicatie", { useMongoClient: true });
 
 var index = require('./routes/index');
 var users = require('./routes/users');
