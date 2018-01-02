@@ -39,7 +39,7 @@ export class NieuwebreakComponent implements OnInit {
 
   onSubmit() {
     let datum = Date.now().toString();
-    const brek = new Break(this.break.value.aantalpunten, datum, this.user);
+    const brek = new Break(parseInt(this.break.value.aantalpunten), datum, this.user);
     this._snookerDataService.addNewBreak(brek).subscribe(item => {
     });
     this._router.navigate(['break'], { queryParams: { user: this.user} });
