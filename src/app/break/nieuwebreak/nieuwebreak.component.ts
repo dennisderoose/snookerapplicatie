@@ -40,7 +40,7 @@ export class NieuwebreakComponent implements OnInit {
   }
 
   onSubmit() {
-    let datum = this.datePipe.transform(Date.now(), 'dd-MM-yyyy');
+    let datum = Date.now().toString();
     const brek = new Break(this.break.value.aantalpunten, datum, this.user);
     this._snookerDataService.addNewBreak(brek).subscribe(item => {
     });
