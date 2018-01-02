@@ -3,7 +3,7 @@ import { Data } from "@angular/router/src/config";
 export class Break {
     private _id: string;
     private _aantalpunten: number;
-    private _datum: Date;
+    private _datum: string;
     private _user: string;    
 
     static fromJSON(json): Break {
@@ -13,7 +13,7 @@ export class Break {
         return rec;
     }
 
-    constructor(aantalpunten: number, datum: Date, user?: string) {
+    constructor(aantalpunten: number, datum: string, user?: string) {
         this._aantalpunten = aantalpunten;
         this._datum = datum;
         this._user = user || "";
@@ -30,10 +30,10 @@ export class Break {
         this._aantalpunten = aantalpunten;
     }
 
-    get datum(): Date {
+    get datum(): string {
         return this.datum;
     }
-    set datum(datum: Date) {
+    set datum(datum: string) {
         this._datum = datum;
     }
 
