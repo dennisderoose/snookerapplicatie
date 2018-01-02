@@ -32,10 +32,9 @@ export class NieuwebreakComponent implements OnInit {
       this.user = params['user'] || "";
     });
     console.log(this.user);
-    /*this.break = this.fb.group({
-      name: ['', [Validators.required, Validators.minLength(2)]],
-      vraag: ['', [Validators.required, Validators.minLength(2)]]
-    });    */
+    this.break = this.fb.group({
+      aantalpunten: ['', [Validators.required, Validators.minLength(1)]]
+    });    
   }
 
   onSubmit() {
