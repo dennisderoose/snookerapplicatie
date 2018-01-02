@@ -25,8 +25,8 @@ router.post("/snookerapplicatie/breaks/", auth, function(req, res, next) {
   console.log("h");
   res.json(req.body);
   let brek = new Break({
-    aantalpunten: req.body.aantalpunten,
-    date: req.body.datum,
+    aantalpunten: parseInt(req.body.aantalpunten),
+    date: "02/01/2018",
     user: req.body.user
   });
   brek.save(function(err, post) {
