@@ -2,8 +2,8 @@ let mongoose = require('mongoose');
 
 let BreakSchema = new mongoose.Schema({
     id: String,
-    break: Number,
-    date: { type: Date, default: Date.now },
+    aantalpunten: Number,
+    date: String,
     user: String
 });
 
