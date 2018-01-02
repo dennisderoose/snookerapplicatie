@@ -9,6 +9,7 @@ import {HttpModule} from '@angular/http';
 import { RegisterComponent } from './register/register.component';
 import { LogoutComponent } from './logout/logout.component';
 import { BreakComponent } from './../break/break/break.component';
+import { NieuwebreakComponent } from './../break/nieuwebreak/nieuwebreak.component';
 import { SnookerDataService } from './../break/snooker-data.service';
 import { SnookerResolver } from './../break/snooker-resolver.service';
 //import { TopicDetailsComponent } from './../topic/topic-details/topic-details.component';
@@ -17,7 +18,8 @@ const routes = [
   { path: 'login', component: LoginComponent },
   { path: 'logout', component: LogoutComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'break', component: BreakComponent}
+  { path: 'break', component: BreakComponent},
+  { path: 'nieuwebreak', component: NieuwebreakComponent}
 ];
 
 @NgModule({
@@ -31,7 +33,8 @@ const routes = [
     LoginComponent,
     RegisterComponent,
     LogoutComponent,
-    BreakComponent
+    BreakComponent,
+    NieuwebreakComponent
   ],
   providers: [
     AuthenticationService,

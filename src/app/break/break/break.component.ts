@@ -63,7 +63,7 @@ export class BreakComponent implements OnInit {
     }
 
     onSubmit() {
-      //this._router.navigate(['topic-details'], { queryParams: { user: this.user} });
+      this._router.navigate(['nieuwebreak'], { queryParams: { user: this.user} });
     }
     uitloggen() {
       this._router.navigate(['logout']);
