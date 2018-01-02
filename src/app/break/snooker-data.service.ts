@@ -10,7 +10,7 @@ export class SnookerDataService {
   private _appUrl = '/snookerapplicatie';
   private _breaks;
 
-  ///webapptaak/topics/:id
+  ///snookerapplicatie/topics/:id
 
   constructor(private http: Http, private auth: AuthenticationService) {
   }

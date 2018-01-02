@@ -8,7 +8,7 @@ let mongoose = require('mongoose');
 let passport = require('passport');
 
 require('./models/User');
-require('./models/Topic');
+require('./models/Break');
 require('./models/Opmerking');
 
 
@@ -34,7 +34,7 @@ app.use(passport.initialize());
 
 
 app.use('/', index);
-app.use('/webapptaak/users', users);
+app.use('/snookerapplicatie/users', users);
 
 app.use(express.static(__dirname + '/dist'));
 
