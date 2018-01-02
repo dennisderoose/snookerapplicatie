@@ -3,7 +3,6 @@ import { SnookerDataService } from './../snooker-data.service';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Break } from '../break.model';
 import { FormGroup, FormBuilder, Validators, FormArray } from '@angular/forms';
-import { DatePipe } from '@angular/common';
 
 
 import { Observable } from 'rxjs/Rx';
@@ -23,7 +22,7 @@ export class NieuwebreakComponent implements OnInit {
   private user: string;
 
 
-  constructor(private fb: FormBuilder, private _snookerDataService: SnookerDataService, private route: ActivatedRoute,  private _router: Router, private datePipe: DatePipe) { }
+  constructor(private fb: FormBuilder, private _snookerDataService: SnookerDataService, private route: ActivatedRoute,  private _router: Router) { }
 
   ngOnInit() {
     this.sub = this.route
