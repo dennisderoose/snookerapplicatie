@@ -23,6 +23,7 @@ router.get("/snookerapplicatie/breaks/", function(req, res, next) {
 
 router.post("/snookerapplicatie/breaks/", auth, function(req, res, next) {
   console.log("h");
+  res.json(req.body);
   let brek = new Break({
     name: req.body.aantalpunten,
     date: Date.now().toString(),
