@@ -44,8 +44,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let break of _breaks | category: searchText 
-    | orderBy: {property: column, direction: direction}">
+    <tr *ngFor="let break of _breaks | orderBy: {property: column, direction: direction}">
       <td class="header item">{{break?._user}}</td>
       <td class="header item">{{break?._aantalpunten}}</td>
       <td class="header item">{{break?._datum}}</td>
