@@ -1,9 +1,8 @@
-import { TopicDataService } from '../topic-data.service';
+import { SnookerDataService } from '../snooker-data.service';
 import { Component, OnInit, Input, EventEmitter, Output, ElementRef, ViewChild } from '@angular/core';
-import { Topic } from '../topic.model';
+import { Break } from '../break.model';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators, FormArray } from '@angular/forms';
-import { Opmerking } from 'app/topic/opmerking/opmerking.model';
 
 import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/debounceTime';
@@ -11,12 +10,13 @@ import 'rxjs/add/operator/distinctUntilChanged';
 import { ViewChildren } from '@angular/core/src/metadata/di';
 import { QueryList } from '@angular/core/src/linker/query_list';
 
+
 @Component({
-  selector: 'app-topic',
-  templateUrl: './topic.component.html',
-  styleUrls: ['./topic.component.css']
+  selector: 'app-break',
+  templateUrl: './break.component.html',
+  styleUrls: ['./break.component.css']
 })
-export class TopicComponent implements OnInit {
+export class BreakComponent implements OnInit {
   @Output() model;
 
   @ViewChildren("title") 
@@ -25,12 +25,12 @@ export class TopicComponent implements OnInit {
   private sub: any;
   private user: string;
 
-  private _topics: Topic[];
-  public topictoevoegen: FormGroup;
-  public uitloggenForum: FormGroup;
-  public opmerkingtoevoegen: FormGroup;
+  private _breaks: Break[];
+  public breaktoevoegen: FormGroup;
+  public uitloggenSnookerApplicatie: FormGroup;
+  //public opmerkingtoevoegen: FormGroup;
   
-    constructor(private fb: FormBuilder, private _topicDataService: TopicDataService, private route: ActivatedRoute, private _router: Router) {
+    constructor(private fb: FormBuilder, private _snookerDataService: SnookerDataService, private route: ActivatedRoute, private _router: Router) {
     }
 
   
@@ -44,31 +44,31 @@ export class TopicComponent implements OnInit {
 
 
 
-      this.topictoevoegen = this.fb.group({}); 
-      this.uitloggenForum = this.fb.group({});     
-      this.opmerkingtoevoegen = this.fb.group({
+      this.breaktoevoegen = this.fb.group({}); 
+      this.uitloggenSnookerApplicatie = this.fb.group({});     
+      /*this.opmerkingtoevoegen = this.fb.group({
         opmerkingname: ['', [Validators.required, Validators.minLength(3)]],
         topic: ['', [Validators.required, Validators.minLength(3)]]
-      });  
-      this._topicDataService.topics.subscribe(items => this._topics = items);
+      }); */ 
+      this._snookerDataService.breaks.subscribe(items => this._breaks = items);
     }
-    get topics() {
-      return this._topics;
+    get breaks() {
+      return this._breaks;
     }
   
-    removeTopic(topic: Topic) {
-      this._topicDataService.removeTopic(topic).subscribe(item =>
-        this._topics = this._topics.filter(val => item.id !== val.id)
+    removeBreak(brek: Break) {
+      this._snookerDataService.removeBreak(brek).subscribe(item =>
+        this._breaks = this._breaks.filter(val => item.id !== val.id)
       );
     }
 
     onSubmit() {
-      this._router.navigate(['topic-details'], { queryParams: { user: this.user} });
+      this._router.navigate(['nieuwebreak'], { queryParams: { user: this.user} });
     }
     uitloggen() {
       this._router.navigate(['logout']);
     } 
-
+/*
     opmerking(evnt) {
       //console.log(this.elTitle.toArray); 
       let teller = 0;
@@ -101,12 +101,12 @@ export class TopicComponent implements OnInit {
         this._topicDataService.updateTopic(topic,topic.id);
 
 
-      }
+      }*/
       /*for(var i=0; i<this.elTitle.length; i++) {7
         
       }*/
       //console.log(this.elTitle.nativeElement.name);
-      console.log(this.opmerkingtoevoegen.value.opmerkingname);    
+      /*console.log(this.opmerkingtoevoegen.value.opmerkingname);    
       let nextArray = [];
       /*const topic = new Topic("kop","hln");
       const opmerking = new Opmerking("klm");
@@ -122,5 +122,5 @@ export class TopicComponent implements OnInit {
             }          
           });
       });*/  
-    }   
+    //}   
 }
