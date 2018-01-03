@@ -10,21 +10,21 @@
 <br>
 <br>
 <br>
-<table class="ui grid container">
+<table class="ui celled table">
   <thead>
     <tr>
-      <th class="four wide column">Naam Speler</th>
-      <th class="four wide column">Break</th>
-      <th class="four wide column">Datum</th>
-      <th class="four wide column">Waar</th>
+      <th class="header item">Naam Speler</th>
+      <th class="header item">Break</th>
+      <th class="header item">Datum</th>
+      <th class="header item">Waar</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let break of _breaks">
-      <td class="four wide column">{{break?._user}}</td>
-      <td class="four wide column">{{break?._aantalpunten}}</td>
-      <td class="four wide column">{{break?._datum}}</td>
-      <td class="four wide column">Training</td>
+      <td class="header item">{{break?._user}}</td>
+      <td class="header item">{{break?._aantalpunten}}</td>
+      <td class="header item">{{break?._datum}}</td>
+      <td class="header item">Training</td>
     </tr>
   </tbody>
 </table>
