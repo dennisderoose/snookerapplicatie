@@ -50,8 +50,10 @@ export class BreakComponent implements OnInit {
         opmerkingname: ['', [Validators.required, Validators.minLength(3)]],
         topic: ['', [Validators.required, Validators.minLength(3)]]
       }); */ 
+      console.log("start");
       this._snookerDataService.breaks.subscribe(items => this._breaks = items);
       console.log(this._breaks);
+      console.log("einde");
     }
     get breaks() {
       return this._breaks;
