@@ -1,5 +1,3 @@
-import { Data } from "@angular/router/src/config";
-
 export class Break {
     private _id: string;
     private _aantalpunten: number;
@@ -8,6 +6,7 @@ export class Break {
 
     static fromJSON(json): Break {
         console.log(json);
+        console.log("k");
         const rec = new Break(json.aantalpunten, json.datum, json.user);
         rec._id = json._id;
         return rec;
