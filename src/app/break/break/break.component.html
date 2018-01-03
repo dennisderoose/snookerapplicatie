@@ -10,11 +10,27 @@
 <br>
 <br>
 <br>
+<table>
+  <tr>
+    <th>Naam Speler</th>
+    <th>Break</th>
+    <th>Datum</th>
+    <th>Tegen</th>
+  </tr>
+  <tr *ngFor="let break of _breaks">
+    <td>{{break?._user}}</td>
+    <td>{{break?._aantalpunten}}</td>
+    <td>{{break?._datum}}</td>
+    <td>Training</td>
+  </tr>
+</table>
+
+<!--
 <div class="ui segment" id='break-component' *ngFor="let break of _breaks">
   <h3 class="ui header" >{{break?._aantalpunten}}</h3>
   <p class="ui header" >{{break?._datum}}</p>
   <p class="ui positive right floated p">aangemaakt door: {{break?._user}}</p>
-</div>
+</div>-->
 
 
 <!--
