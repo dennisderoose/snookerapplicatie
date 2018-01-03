@@ -38,7 +38,8 @@ export class NieuwebreakComponent implements OnInit {
   }
 
   onSubmit() {
-    const brek = new Break(parseInt(this.break.value.aantalpunten), "02/01/2018", this.user);
+    let datum = new Date().getDate()+"/"+new Date().getMonth()+1+"/"+new Date().getFullYear();
+    const brek = new Break(parseInt(this.break.value.aantalpunten), datum.toString(), this.user);
     console.log(brek);
     this._snookerDataService.addNewBreak(brek).subscribe(item => {
     });
