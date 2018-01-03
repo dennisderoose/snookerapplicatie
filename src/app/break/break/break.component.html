@@ -10,17 +10,17 @@
 <br>
 <br>
 <br>
-<div class="four column row">
-  <div class="column">Naam Speler</div>
-  <div class="column">Break</div>
-  <div class="column">Datum</div>
-  <div class="column">Waar</div>
+<div class="ui grid">
+  <div class="header item">Naam Speler</div>
+  <div class="item">Break</div>
+  <div class="four wide centered column">Datum</div>
+  <div class="four wide centered column">Waar</div>
 </div>
-<div class="four column row" *ngFor="let break of _breaks">
-  <div class="column ">{{break?._user}}</div>
-  <div class="column">{{break?._aantalpunten}}</div>
-  <div class="column">{{break?._datum}}</div>
-  <div class="column">Training</div>
+<div class="ui grid" *ngFor="let break of _breaks">
+  <div class="four wide centered column ">{{break?._user}}</div>
+  <div class="four wide centered column">{{break?._aantalpunten}}</div>
+  <div class="four wide centered column">{{break?._datum}}</div>
+  <div class="four wide centered column">Training</div>
 </div>
 <!--
 <table>
