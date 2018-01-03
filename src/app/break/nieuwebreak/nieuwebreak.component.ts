@@ -42,7 +42,10 @@ export class NieuwebreakComponent implements OnInit {
     console.log(brek);
     this._snookerDataService.addNewBreak(brek).subscribe(item => {
     });
-    this._router.navigate(['break'], { queryParams: { user: this.user} });
+    setTimeout((router: Router) => {
+      this._router.navigate(['break'], { queryParams: { user: this.user} });
+  }, 5000); 
+    
   }
 
 
