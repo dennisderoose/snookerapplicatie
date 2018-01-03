@@ -5,7 +5,7 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class AuthenticationService {
-  private _url = '/snookerapplicatie/users';
+  private _url = '/webapptaak/users';
   private _user$: BehaviorSubject<string>;
 
   public redirectUrl: string;

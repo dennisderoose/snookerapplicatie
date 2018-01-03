@@ -1,16 +1,16 @@
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, async, inject } from '@angular/core/testing';
-import { SnookerDataService } from './snooker-data.service';
+import { TopicDataService } from './topic-data.service';
 
-describe('SnookerDataService', () => {
+describe('TopicDataService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [SnookerDataService]
+      providers: [TopicDataService]
     });
   });
 
-  it('should ...', inject([SnookerDataService], (service: SnookerDataService) => {
+  it('should ...', inject([TopicDataService], (service: TopicDataService) => {
     expect(service).toBeTruthy();
   }));
 });

@@ -4,7 +4,7 @@ var router = express.Router();
 let mongoose = require("mongoose");
 let jwt = require("express-jwt");
 
-let Break = mongoose.model("Break");
+let Topic = mongoose.model("Topic");
 let Opmerking = mongoose.model("Opmerking");
 
 let auth = jwt({
@@ -13,32 +13,33 @@ let auth = jwt({
 });
 
 /* GET home page. */
-router.get("/snookerapplicatie/breaks/", function(req, res, next) {
-  let query = Break.find();
-  query.exec(function(err, breaks) {
+router.get("/webapptaak/topics/", function(req, res, next) {
+  let query = Topic.find();
+  query.exec(function(err, topics) {
     if (err) return next(err);
-    res.json(breaks);
+    res.json(topics);
   });
 });
 
-router.post("/snookerapplicatie/breaks/", auth, function(req, res, next) {
+router.post("/webapptaak/topics/", auth, function(req, res, next) {
   console.log("h");
-  res.json(req.body);
-  let brek = new Break({
-    aantalpunten: parseInt(req.body.aantalpunten),
-    date: parseInt(req.body.datum),
+  let topic = new Topic({
+    name: req.body.name,
+    vraag: req.body.vraag,
+    opmerkingen: req.body.opmerkingen,
     user: req.body.user
   });
-  brek.save(function(err, post) {
+  topic.save(function(err, post) {
     if (err) {
       return next(err);
     }
-    res.json(brek);
+    res.json(topic);
   });
 });
 
-router.put("/snookerapplicatie/breaks/:id", auth, function(req, res) {
+router.put("/webapptaak/topics/:id", auth, function(req, res) {
   console.log("k");
+  console.log(req.body.opmerkingen);
 /*
   let opm = new Opmerking(req.body);
   console.log(opm);
@@ -52,17 +53,17 @@ router.put("/snookerapplicatie/breaks/:id", auth, function(req, res) {
     })
   });*/
 
-Break.findById(req.params.id, function(err, Break) {
+Topic.findById(req.params.id, function(err, Topic) {
   if(err) {
     res.send(err);
   }
-  //Topic.opmerkingen = req.body.opmerkingen;
+  Topic.opmerkingen = req.body.opmerkingen;
 
-  Break.save(function(err) {
+  Topic.save(function(err) {
     if (err)
         res.send(err);
 
-    res.json({ message: 'Break updated!' });
+    res.json({ message: 'Topic updated!' });
   });
 });
 
@@ -95,30 +96,30 @@ Break.findById(req.params.id, function(err, Break) {
 });
 
 
-router.param("break", function(req, res, next, id) {
-  let query = Break.findById(id);
-  query.exec(function(err, brek) {
+router.param("topic", function(req, res, next, id) {
+  let query = Topic.findById(id);
+  query.exec(function(err, topic) {
     if (err) {
       return next(err);
     }
-    if (!brek) {
+    if (!topic) {
       return next(new Error("not found " + id));
     }
-    req.brek = brek;
+    req.topic = topic;
     return next();
   });
 });
 
 
 
-router.get("/snookerapplicatie/breaks/:break", function(req, res) {
-  req.break.populate("opmerkingen", function(err, rec) {
+router.get("/webapptaak/topics/:topic", function(req, res) {
+  req.topic.populate("opmerkingen", function(err, rec) {
     if (err) return next(err);
     res.json(rec);
   });
 });
 /*
-router.post("/snookerapplicatie/topic/:topic/opmerkingen", function(req, res, next) {
+router.post("/webapptaak/topic/:topic/opmerkingen", function(req, res, next) {
   let opm = new Opmerking(req.body);
   console.log(opm);
   opm.save(function(err, opmerking) {

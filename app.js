@@ -8,13 +8,13 @@ let mongoose = require('mongoose');
 let passport = require('passport');
 
 require('./models/User');
-require('./models/Break');
+require('./models/Topic');
 require('./models/Opmerking');
 
 
 require('./config/passport');
 
-mongoose.connect("mongodb://Dennisder:denny1997@ds131997.mlab.com:31997/snookerapplicatie", { useMongoClient: true });
+mongoose.connect("mongodb://Dennisder:denny1997@ds131137.mlab.com:31137/forumstudenten", { useMongoClient: true });
 
 var index = require('./routes/index');
 var users = require('./routes/users');
@@ -34,7 +34,7 @@ app.use(passport.initialize());
 
 
 app.use('/', index);
-app.use('/snookerapplicatie/users', users);
+app.use('/webapptaak/users', users);
 
 app.use(express.static(__dirname + '/dist'));
 

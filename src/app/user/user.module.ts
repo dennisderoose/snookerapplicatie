@@ -8,18 +8,17 @@ import { CommonModule } from '@angular/common';
 import {HttpModule} from '@angular/http';
 import { RegisterComponent } from './register/register.component';
 import { LogoutComponent } from './logout/logout.component';
-import { BreakComponent } from './../break/break/break.component';
-import { NieuwebreakComponent } from './../break/nieuwebreak/nieuwebreak.component';
-import { SnookerDataService } from './../break/snooker-data.service';
-import { SnookerResolver } from './../break/snooker-resolver.service';
-//import { TopicDetailsComponent } from './../topic/topic-details/topic-details.component';
+import { TopicComponent } from './../topic/topic/topic.component';
+import { TopicDataService } from './../topic/topic-data.service';
+import { TopicResolver } from './../topic/topic-resolver.service';
+import { TopicDetailsComponent } from './../topic/topic-details/topic-details.component';
 
 const routes = [
   { path: 'login', component: LoginComponent },
   { path: 'logout', component: LogoutComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'break', component: BreakComponent},
-  { path: 'nieuwebreak', component: NieuwebreakComponent}
+  { path: 'topic', component: TopicComponent},
+  { path: 'topic-details', component: TopicDetailsComponent}
 ];
 
 @NgModule({
@@ -33,14 +32,14 @@ const routes = [
     LoginComponent,
     RegisterComponent,
     LogoutComponent,
-    BreakComponent,
-    NieuwebreakComponent
+    TopicComponent,
+    TopicDetailsComponent
   ],
   providers: [
     AuthenticationService,
     AuthGuardService,
-    SnookerDataService,
-    SnookerResolver
+    TopicDataService,
+    TopicResolver
   ],
   exports: [
   ]
