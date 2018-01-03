@@ -10,17 +10,25 @@
 <br>
 <br>
 <br>
-<div class="ui grid">
-  <div class="four wide centered item ">Naam Speler</div>
-  <div class="four wide centered item ">Break</div>
-  <div class="four wide centered item">Datum</div>
-  <div class="four wide centered item">Waar</div>
+<div class="ui center aligned four column grid">
+  <div class="row">
+      <div class="column">
+        <div class="header item">Naam Speler</div>
+        <div class="header item">Break</div>
+        <div class="header item">Datum</div>
+        <div class="header item">Waar</div>
+      </div>
+  </div>
 </div>
-<div class="ui grid" *ngFor="let break of _breaks">
-  <div class="four wide centered item ">{{break?._user}}</div>
-  <div class="four wide centered item">{{break?._aantalpunten}}</div>
-  <div class="four wide centered item">{{break?._datum}}</div>
-  <div class="four wide centered item">Training</div>
+<div class="ui center aligned four column grid" *ngFor="let break of _breaks">
+    <div class="row">
+        <div class="column">
+            <div class="header item">{{break?._user}}</div>
+            <div class="header item">{{break?._aantalpunten}}</div>
+            <div class="header item">{{break?._datum}}</div>
+            <div class="header item">Training</div>
+        </div>
+    </div>
 </div>
 <!--
 <table>
