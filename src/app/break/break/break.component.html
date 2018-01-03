@@ -10,6 +10,19 @@
 <br>
 <br>
 <br>
+<div class="ui grid">
+  <div class="four wide column">Naam Speler</div>
+  <div class="four wide column">Break</div>
+  <div class="four wide column">Datum</div>
+  <div class="four wide column">Waar</div>
+</div>
+<div class="ui grid" *ngFor="let break of _breaks">
+  <div class="four wide column">{{break?._user}}</div>
+  <div class="four wide column">{{break?._aantalpunten}}</div>
+  <div class="four wide column">{{break?._datum}}</div>
+  <div class="four wide column">Training</div>
+</div>
+<!--
 <table>
   <tr>
     <th>Naam Speler</th>
@@ -23,7 +36,7 @@
     <td>{{break?._datum}}</td>
     <td>Training</td>
   </tr>
-</table>
+</table>-->
 
 <!--
 <div class="ui segment" id='break-component' *ngFor="let break of _breaks">
