@@ -3,7 +3,7 @@ let mongoose = require('mongoose');
 let BreakSchema = new mongoose.Schema({
     id: String,
     aantalpunten: Number,
-    date: String,
+    datum: String,
     user: String
 });
 

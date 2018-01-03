@@ -1,0 +1,35 @@
+<h1>
+  Snooker applicatie
+</h1>
+<form [formGroup]='breaktoevoegen' (ngSubmit)='onSubmit()' >
+    <button type='submit' class="ui positive left floated button">Break toevoegen</button>
+</form>
+<form [formGroup]='uitloggenSnookerApplicatie' (ngSubmit)='uitloggen()'>   
+    <button type='submit' class="ui positive right floated button">Uitloggen</button>
+</form>
+<br>
+<br>
+<br>
+<div class="ui segment" id='break-component{{break._name}}' *ngFor="let break of _breaks">
+  <h3 class="ui header" >{{break?._name}}</h3>
+  <p class="ui header" >{{break?._vraag}}</p>
+  <p class="ui positive right floated p">aangemaakt door: {{break?._user}}</p>
+</div>
+
+
+<!--
+<form [formGroup]='opmerkingtoevoegen' (ngSubmit)='opmerking($event)' #f="ngForm" >
+  <div class="ui segment" id='topic-component{{topic._name}}' *ngFor="let topic of _topics">
+    <h3 class="ui header" >{{topic?._name}}</h3>
+    <p class="ui header" >{{topic?._vraag}}</p>
+    <p class="ui positive right floated p">aangemaakt door: {{topic?._user}}</p>
+    <div *ngFor="let opmerking of topic.opmerkingen">
+      <p>{{opmerking?.name}}</p>
+    </div>
+    <div class="field">
+    <label for="Opmerking">Opmerking invullen:</label> 
+    <input type="text" id="Opmerking{{topic._name}}" formControlName='opmerkingname' [name]="topic._name" ngControl="opmerking" [ngModel]="" #title>
+    <button type='submit' id="{{topic._name}}" class="ui positive right floated button">add</button>
+    </div> 
+  </div>
+</form>-->
