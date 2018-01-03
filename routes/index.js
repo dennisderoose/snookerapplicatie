@@ -25,7 +25,6 @@ router.get("/snookerapplicatie/breaks/", function(req, res, next) {
 
 router.post("/snookerapplicatie/breaks/", auth, function(req, res, next) {
   console.log("h");
-  res.json(req.body);
   let brek = new Break({
     aantalpunten: parseInt(req.body.aantalpunten),
     datum: "03/01/2018",
