@@ -9,7 +9,6 @@ let passport = require('passport');
 
 require('./models/User');
 require('./models/Break');
-require('./models/Opmerking');
 
 
 require('./config/passport');

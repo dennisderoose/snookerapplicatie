@@ -3,6 +3,7 @@ import { HttpModule } from '@angular/http';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BreakComponent } from 'app/break/break/break.component';
+import { NieuwebreakComponent } from 'app/break/nieuwebreak/nieuwebreak.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { SnookerDataService } from './snooker-data.service';
@@ -15,7 +16,8 @@ const routes = [
 
 @NgModule({
   declarations: [
-    BreakComponent
+    BreakComponent,
+    NieuwebreakComponent
   ],
   imports: [
     HttpModule,

@@ -5,7 +5,6 @@ let mongoose = require("mongoose");
 let jwt = require("express-jwt");
 
 let Break = mongoose.model("Break");
-let Opmerking = mongoose.model("Opmerking");
 
 let auth = jwt({
   secret:  "ifthisendsupingithubyoufailtheclass",
