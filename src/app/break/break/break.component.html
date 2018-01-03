@@ -11,16 +11,16 @@
 <br>
 <br>
 <div class="ui grid">
-  <div class="header item">Naam Speler</div>
-  <div class="item">Break</div>
-  <div class="four wide centered column">Datum</div>
-  <div class="four wide centered column">Waar</div>
+  <div class="four wide centered item ">Naam Speler</div>
+  <div class="four wide centered item ">Break</div>
+  <div class="four wide centered item">Datum</div>
+  <div class="four wide centered item">Waar</div>
 </div>
 <div class="ui grid" *ngFor="let break of _breaks">
-  <div class="four wide centered column ">{{break?._user}}</div>
-  <div class="four wide centered column">{{break?._aantalpunten}}</div>
-  <div class="four wide centered column">{{break?._datum}}</div>
-  <div class="four wide centered column">Training</div>
+  <div class="four wide centered item ">{{break?._user}}</div>
+  <div class="four wide centered item">{{break?._aantalpunten}}</div>
+  <div class="four wide centered item">{{break?._datum}}</div>
+  <div class="four wide centered item">Training</div>
 </div>
 <!--
 <table>
