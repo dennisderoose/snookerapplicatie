@@ -28,6 +28,10 @@ export class BreakComponent implements OnInit {
   private _breaks: Break[];
   public breaktoevoegen: FormGroup;
   public uitloggenSnookerApplicatie: FormGroup;
+
+  records: Array<any>;
+  isDesc: boolean = false;
+  column: string = 'CategoryName';
   //public opmerkingtoevoegen: FormGroup;
   
     constructor(private fb: FormBuilder, private _snookerDataService: SnookerDataService, private route: ActivatedRoute, private _router: Router) {
@@ -68,6 +72,25 @@ export class BreakComponent implements OnInit {
     uitloggen() {
       this._router.navigate(['logout']);
     } 
+
+    sort(property){
+      this.isDesc = !this.isDesc; //change the direction    
+      this.column = property;
+      let direction = this.isDesc ? 1 : -1;
+  
+      this.records.sort(function(a, b){
+          if(a[property] < b[property]){
+              return -1 * direction;
+          }
+          else if( a[property] > b[property]){
+              return 1 * direction;
+          }
+          else{
+              return 0;
+          }
+      });
+  };
+
 /*
     opmerking(evnt) {
       //console.log(this.elTitle.toArray); 
