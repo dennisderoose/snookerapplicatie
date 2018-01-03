@@ -11,7 +11,7 @@ import { SnookerResolver } from './snooker-resolver.service';
 
 
 const routes = [
-  //{ path: 'topic-details', component:  TopicDetailsComponent}
+  { path: 'nieuwebreak', component:  NieuwebreakComponent}
 ];
 
 @NgModule({
