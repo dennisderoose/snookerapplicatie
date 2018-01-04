@@ -27,7 +27,7 @@ export class BreakComponent implements OnInit {
   private sub: any;
   private user: string;
 
-  private brek: Break[];
+  private _breaks: Break[];
   public breaktoevoegen: FormGroup;
   public uitloggenSnookerApplicatie: FormGroup;
 
@@ -56,15 +56,15 @@ export class BreakComponent implements OnInit {
         opmerkingname: ['', [Validators.required, Validators.minLength(3)]],
         topic: ['', [Validators.required, Validators.minLength(3)]]
       }); */ 
-      this._snookerDataService.breaks.subscribe(items => this.brek = items);
+      this._snookerDataService.breaks.subscribe(items => this._breaks = items);
     }
     get breaks() {
-      return this.brek;
+      return this._breaks;
     }
   
     removeBreak(brek: Break) {
       this._snookerDataService.removeBreak(brek).subscribe(item =>
-        this.brek = this.brek.filter(val => item.id !== val.id)
+        this._breaks = this._breaks.filter(val => item.id !== val.id)
       );
     }
 
