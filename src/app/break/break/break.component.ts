@@ -60,7 +60,7 @@ export class BreakComponent implements OnInit {
         topic: ['', [Validators.required, Validators.minLength(3)]]
       }); */ 
       this._snookerDataService.breaks.subscribe(items => this._breaks = items);
-
+      //3 seconden wachten
       setTimeout(function() {
         $(function(){
           $('#dt').DataTable();
