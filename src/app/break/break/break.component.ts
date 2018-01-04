@@ -11,7 +11,7 @@ import { ViewChildren } from '@angular/core';
 import { QueryList } from '@angular/core';
 
 import { DataTableModule } from 'angular-4-data-table';
-declare var $;
+//declare var $;
 
 @Component({
   selector: 'app-break',
@@ -26,6 +26,8 @@ export class BreakComponent implements OnInit {
 
   private sub: any;
   private user: string;
+
+  private $:any
 
   private _breaks: Break[];
   public breaktoevoegen: FormGroup;
@@ -60,8 +62,8 @@ export class BreakComponent implements OnInit {
       }); */ 
       this._snookerDataService.breaks.subscribe(items => this._breaks = items);
 
-      $(document).ready(function(){
-        $('#dt').DataTable();
+      this.$(document).ready(function(){
+        this.$('#dt').DataTable();
       });
     }
     get breaks() {
