@@ -7,8 +7,8 @@ import { FormGroup, FormBuilder, Validators, FormArray } from '@angular/forms';
 import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
-import { ViewChildren } from '@angular/core/src/metadata/di';
-import { QueryList } from '@angular/core/src/linker/query_list';
+import { ViewChildren } from '@angular/core';
+import { QueryList } from '@angular/core';
 
 import { DataTableModule } from 'angular-4-data-table';
 
