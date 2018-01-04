@@ -61,9 +61,12 @@ export class BreakComponent implements OnInit {
       }); */ 
       this._snookerDataService.breaks.subscribe(items => this._breaks = items);
 
-      $(function(){
-        $('#dt').DataTable();
-      });
+      setTimeout(function() {
+        $(function(){
+          $('#dt').DataTable();
+        });
+      }, 3000); 
+
     }
     get breaks() {
       return this._breaks;
