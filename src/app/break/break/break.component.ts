@@ -11,7 +11,7 @@ import { ViewChildren } from '@angular/core';
 import { QueryList } from '@angular/core';
 
 import { DataTableModule } from 'angular-4-data-table';
-
+declare var $;
 
 @Component({
   selector: 'app-break',
@@ -30,6 +30,8 @@ export class BreakComponent implements OnInit {
   private _breaks: Break[];
   public breaktoevoegen: FormGroup;
   public uitloggenSnookerApplicatie: FormGroup;
+
+ 
 
   records: Array<any>;
   isDesc: boolean = false;
@@ -57,6 +59,10 @@ export class BreakComponent implements OnInit {
         topic: ['', [Validators.required, Validators.minLength(3)]]
       }); */ 
       this._snookerDataService.breaks.subscribe(items => this._breaks = items);
+
+      $(document).ready(function(){
+        $('#dt').DataTable();
+      });
     }
     get breaks() {
       return this._breaks;
