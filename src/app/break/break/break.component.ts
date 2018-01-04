@@ -10,6 +10,8 @@ import 'rxjs/add/operator/distinctUntilChanged';
 import { ViewChildren } from '@angular/core/src/metadata/di';
 import { QueryList } from '@angular/core/src/linker/query_list';
 
+import { DataTableModule } from 'angular-4-data-table';
+
 
 @Component({
   selector: 'app-break',
