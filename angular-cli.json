@@ -18,10 +18,12 @@
       "tsconfig": "tsconfig.json",
       "prefix": "app",
       "styles": [
-        "styles.css"
+        "styles.css",
+        "https://cdn.datatables.net/1.10.16/css/dataTables.semanticui.min.css"
       ],
       "scripts": [
-        
+        "https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js",
+        "https://cdn.datatables.net/1.10.16/js/dataTables.semanticui.min.js"
       ],
       "environments": {
         "source": "environments/environment.ts",
