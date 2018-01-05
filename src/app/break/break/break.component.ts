@@ -32,7 +32,7 @@ export class BreakComponent implements OnInit {
   public breaktoevoegen: FormGroup;
   public uitloggenSnookerApplicatie: FormGroup;
 
- 
+  public loading = false;
 
   records: Array<any>;
   isDesc: boolean = false;
@@ -44,6 +44,8 @@ export class BreakComponent implements OnInit {
 
   
     ngOnInit() {
+      this.loading = true;
+
       this.sub = this.route
       .queryParams
       .subscribe(params => {
@@ -66,7 +68,7 @@ export class BreakComponent implements OnInit {
           $('#dt').DataTable();
         });
       }, 3000); 
-
+      this.loading = false;
     }
     get breaks() {
       return this._breaks;
