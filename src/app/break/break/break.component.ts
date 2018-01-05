@@ -61,11 +61,11 @@ export class BreakComponent implements OnInit {
       }); */ 
       this._snookerDataService.breaks.subscribe(items => this._breaks = items);
       //3 seconden wachten
-      setTimeout(function() {
+      //setTimeout(function() {
         $(function(){
           $('#dt').DataTable();
         });
-      }, 3000); 
+      //}, 3000); 
 
     }
     get breaks() {
