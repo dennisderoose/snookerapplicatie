@@ -12,6 +12,7 @@ import { BreakComponent } from './../break/break/break.component';
 import { NieuwebreakComponent } from './../break/nieuwebreak/nieuwebreak.component';
 import { SnookerDataService } from './../break/snooker-data.service';
 import { SnookerResolver } from './../break/snooker-resolver.service';
+import { LoadingModule } from 'ngx-loading';
 //import { TopicDetailsComponent } from './../topic/topic-details/topic-details.component';
 
 const routes = [
@@ -26,6 +27,7 @@ const routes = [
   imports: [
     CommonModule,
     HttpModule,
+    LoadingModule,
     ReactiveFormsModule,
     RouterModule.forChild(routes)
   ],
