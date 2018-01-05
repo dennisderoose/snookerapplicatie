@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { SnookerDataService } from './snooker-data.service';
 import { SnookerResolver } from './snooker-resolver.service';
+import { LoadingModule } from 'ngx-loading';
 
 
 const routes = [
@@ -24,6 +25,7 @@ const routes = [
     CommonModule,
     ReactiveFormsModule,
     FormsModule,
+    LoadingModule,
     RouterModule.forChild(routes)
   ],
   providers: [
