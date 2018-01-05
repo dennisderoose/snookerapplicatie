@@ -68,7 +68,8 @@ export class BreakComponent implements OnInit {
         $(function(){
           $('#dt').DataTable();
         });
-        this.loading = false;
+        this.stoploading()
+        
       }, 3000); 
       
     }
@@ -76,6 +77,10 @@ export class BreakComponent implements OnInit {
       return this._breaks;
     }
   
+    stoploading() {
+      this.loading = false;
+    }
+
     removeBreak(brek: Break) {
       this._snookerDataService.removeBreak(brek).subscribe(item =>
         this._breaks = this._breaks.filter(val => item.id !== val.id)
