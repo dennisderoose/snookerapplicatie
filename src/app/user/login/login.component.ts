@@ -35,9 +35,7 @@ export class LoginComponent implements OnInit {
           this.router.navigateByUrl(this.authService.redirectUrl);
           this.authService.redirectUrl = undefined;
         } else {
-          setTimeout((router: Router) => {
-            this.router.navigate(['/break'], { queryParams: { user: this.user.value.username } });
-          }, 3000);           
+          this.router.navigate(['/break'], { queryParams: { user: this.user.value.username } });
         }
       }
     }, err => this.errorMsg = err.json().message);
