@@ -65,12 +65,11 @@ export class BreakComponent implements OnInit {
       console.log(this.loading); 
       this._snookerDataService.breaks.subscribe(items => this._breaks = items);
       //3 seconden wachten
-      setTimeout(function() {
+      setTimeout(() => {
         $(function(){
           $('#dt').DataTable();
         });
-        this.loading = false;
-        //this.stoploading();        
+        this.loading = false;     
         console.log(this.loading); 
       }, 3000); 
       
@@ -78,11 +77,11 @@ export class BreakComponent implements OnInit {
     get breaks() {
       return this._breaks;
     }
-  /*
+  
     stoploading() {
       console.log("werkt");
       this.loading = false;
-    }*/
+    }
 
     removeBreak(brek: Break) {
       this._snookerDataService.removeBreak(brek).subscribe(item =>
