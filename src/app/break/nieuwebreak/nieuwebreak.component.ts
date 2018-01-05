@@ -45,7 +45,7 @@ export class NieuwebreakComponent implements OnInit {
     });
     setTimeout((router: Router) => {
       this._router.navigate(['break'], { queryParams: { user: this.user} });
-  }, 1000); 
+    }, 1000); 
     
   }
 
