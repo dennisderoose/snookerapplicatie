@@ -12,9 +12,6 @@ import { QueryList } from '@angular/core';
 
 import { DataTableModule } from 'angular-4-data-table';
 import { LoadingModule } from 'ngx-loading';
-
-import {BehaviorSubject} from 'rxjs/BehaviorSubject';
-
 declare var $;
 
 @Component({
