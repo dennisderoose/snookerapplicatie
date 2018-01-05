@@ -11,6 +11,7 @@ import { ViewChildren } from '@angular/core';
 import { QueryList } from '@angular/core';
 
 import { DataTableModule } from 'angular-4-data-table';
+import { LoadingModule } from 'ngx-loading';
 declare var $;
 
 @Component({
