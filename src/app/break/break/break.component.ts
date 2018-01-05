@@ -78,6 +78,7 @@ export class BreakComponent implements OnInit {
     }
   
     stoploading() {
+      console.log("werkt");
       this.loading = false;
     }
 
