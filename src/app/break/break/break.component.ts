@@ -3,6 +3,7 @@ import { Component, OnInit, Input, EventEmitter, Output, ElementRef, ViewChild }
 import { Break } from '../break.model';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators, FormArray } from '@angular/forms';
+import { Location} from '@angular/common';
 
 import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/debounceTime';
@@ -40,7 +41,7 @@ export class BreakComponent implements OnInit {
   column: string = 'CategoryName';
   //public opmerkingtoevoegen: FormGroup;
   
-    constructor(private fb: FormBuilder, private _snookerDataService: SnookerDataService, private route: ActivatedRoute, private _router: Router) {
+    constructor(private fb: FormBuilder, private _snookerDataService: SnookerDataService, private route: ActivatedRoute, private _router: Router, private location: Location) {
     }
 
   
@@ -77,12 +78,12 @@ export class BreakComponent implements OnInit {
     get breaks() {
       return this._breaks;
     }
-  
+  /*
     stoploading() {
       console.log("werkt");
       this.loading = false;
     }
-
+*/
     removeBreak(brek: Break) {
       this._snookerDataService.removeBreak(brek).subscribe(item =>
         this._breaks = this._breaks.filter(val => item.id !== val.id)
@@ -93,6 +94,7 @@ export class BreakComponent implements OnInit {
       this._router.navigate(['nieuwebreak'], { queryParams: { user: this.user} });
     }
     uitloggen() {
+      this.location.replaceState('/');
       this._router.navigate(['logout']);
     } 
 
