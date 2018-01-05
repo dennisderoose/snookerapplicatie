@@ -61,7 +61,8 @@ export class BreakComponent implements OnInit {
       /*this.opmerkingtoevoegen = this.fb.group({
         opmerkingname: ['', [Validators.required, Validators.minLength(3)]],
         topic: ['', [Validators.required, Validators.minLength(3)]]
-      }); */ 
+      }); */
+      console.log(this.loading); 
       this._snookerDataService.breaks.subscribe(items => this._breaks = items);
       //3 seconden wachten
       setTimeout(function() {
@@ -70,7 +71,7 @@ export class BreakComponent implements OnInit {
         });
         this.loading = false;
         //this.stoploading();        
-        
+        console.log(this.loading); 
       }, 3000); 
       
     }
