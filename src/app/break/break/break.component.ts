@@ -69,7 +69,7 @@ export class BreakComponent implements OnInit {
           $('#dt').DataTable();
         });
       }, 3000); 
-      this.loading = false;
+      //this.loading = false;
     }
     get breaks() {
       return this._breaks;
