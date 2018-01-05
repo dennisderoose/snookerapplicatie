@@ -78,11 +78,11 @@ export class BreakComponent implements OnInit {
     get breaks() {
       return this._breaks;
     }
-  
+  /*
     stoploading() {
       console.log("werkt");
       this.loading = false;
-    }
+    }*/
 
     removeBreak(brek: Break) {
       this._snookerDataService.removeBreak(brek).subscribe(item =>
