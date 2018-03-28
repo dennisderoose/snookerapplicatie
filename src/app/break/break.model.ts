@@ -12,11 +12,11 @@ export class Break {
         return rec;
     }
 
-    constructor(aantalpunten: number, datum: string, typeGemaakt: string, user?: string) {
+    constructor(aantalpunten: number, datum: string, typeGemaakt?: string, user?: string) {
         this._aantalpunten = aantalpunten;
-        this._datum = datum;
-        this._typeGemaakt = typeGemaakt;
+        this._datum = datum;    
         this._user = user || "";
+        this._typeGemaakt = typeGemaakt || "";
         
                 
     }
@@ -58,7 +58,8 @@ export class Break {
             _id: this._id,
             aantalpunten: this._aantalpunten,
             datum: this._datum,
-            user: this._user
+            user: this._user,
+            typeGemaakt: this._typeGemaakt
         };
     }
 
