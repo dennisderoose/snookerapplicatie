@@ -12,13 +12,11 @@ export class Break {
         return rec;
     }
 
-    constructor(aantalpunten: number, datum: string, typeGemaakt?: string, user?: string) {
+    constructor(aantalpunten: number, datum: string, user?: string, typeGemaakt?: string) {
         this._aantalpunten = aantalpunten;
         this._datum = datum;    
         this._user = user || "";
-        this._typeGemaakt = typeGemaakt || "";
-        
-                
+        this._typeGemaakt = typeGemaakt || "";                        
     }
 
     get id(): string {
