@@ -16,7 +16,7 @@ export class Break {
         this._aantalpunten = aantalpunten;
         this._datum = datum;    
         this._user = user || "";
-        this._typeGemaakt = typeGemaakt || "";                        
+        this._typeGemaakt = typeGemaakt || "Niet ingevuld";                        
     }
 
     get id(): string {
