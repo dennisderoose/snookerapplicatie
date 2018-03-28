@@ -33,13 +33,16 @@ export class NieuwebreakComponent implements OnInit {
     });
     console.log(this.user);
     this.break = this.fb.group({
-      aantalpunten: ['', [Validators.required, Validators.minLength(1)]]
+      aantalpunten: ['', [Validators.required, Validators.minLength(1)]],
+      typeGemaakt: ['', [Validators.required, Validators.minLength(1)]]
     });    
   }
 
   onSubmit() {
     let datum = new Date().getDate()+"/"+new Date().getMonth()+1+"/"+new Date().getFullYear();
-    const brek = new Break(parseInt(this.break.value.aantalpunten), datum.toString(), this.user);
+    let typeGemaakt = this.break.value.inWatGemaakt;
+    const brek = new Break(parseInt(this.break.value.typeGemaakt), datum.toString(), typeGemaakt, this.user);
+    
     console.log(brek);
     this._snookerDataService.addNewBreak(brek).subscribe(item => {
     });

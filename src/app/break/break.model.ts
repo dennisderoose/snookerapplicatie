@@ -2,19 +2,22 @@ export class Break {
     private _id: string;
     private _aantalpunten: number;
     private _datum: string;
-    private _user: string;    
+    private _user: string;  
+    private _typeGemaakt: string;  
 
     static fromJSON(json): Break {
         console.log(json);
-        const rec = new Break(json.aantalpunten, json.datum, json.user);
+        const rec = new Break(json.aantalpunten, json.datum, json.user, json.typeGemaakt);
         rec._id = json._id;
         return rec;
     }
 
-    constructor(aantalpunten: number, datum: string, user?: string) {
+    constructor(aantalpunten: number, datum: string, typeGemaakt: string, user?: string) {
         this._aantalpunten = aantalpunten;
         this._datum = datum;
+        this._typeGemaakt = typeGemaakt;
         this._user = user || "";
+        
                 
     }
 
@@ -41,6 +44,14 @@ export class Break {
     set user(user: string) {
         this._user = user;
     } 
+
+    get typeGemaakt(): string {
+        return this._typeGemaakt;
+    }
+    set typeGemaakt(typeGemaakt: string) {
+        this._typeGemaakt = typeGemaakt;
+    } 
+
 
     toJSON() {
         return {
