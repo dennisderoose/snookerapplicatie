@@ -32,7 +32,8 @@ export class NieuwebreakComponent implements OnInit {
     console.log(this.user);
     this.break = this.fb.group({
       aantalpunten: ['', [Validators.required, Validators.minLength(1)]],
-      typeGemaakt: ['', [Validators.required, Validators.minLength(1)]]
+      typeGemaakt: ['', [Validators.required, Validators.minLength(1)]],
+      datumGemaakt: ['', [Validators.required, Validators.minLength(1)]]
     });    
   }
 
@@ -45,6 +46,10 @@ export class NieuwebreakComponent implements OnInit {
 
     let datum = new Date().getDate()+"/"+ maand +"/"+new Date().getFullYear();
     let typeGemaakt = this.break.value.typeGemaakt;
+    let datumGemaakt = this.break.value.datumGemaakt;
+    console.log("datum begin");
+    console.log(datumGemaakt);
+    console.log("datum einde");
     const brek = new Break(parseInt(this.break.value.aantalpunten), datum.toString(), this.user, typeGemaakt);
     
     console.log(brek);
