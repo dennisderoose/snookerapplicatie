@@ -17,10 +17,6 @@ export class Break {
         this._datum = datum;    
         this._user = user || "";
         this._typeGemaakt = typeGemaakt || "Niet ingevuld";                        
-<<<<<<< HEAD
-
-=======
->>>>>>> 888423b80f08a961af5ca1887f5dfa02c399fd8d
     }
 
     get id(): string {
@@ -54,18 +50,10 @@ export class Break {
     get typeGemaakt(): string {
         return this._typeGemaakt;
     }
-<<<<<<< HEAD
-
-=======
->>>>>>> 888423b80f08a961af5ca1887f5dfa02c399fd8d
     set typeGemaakt(typeGemaakt: string) {
         this._typeGemaakt = typeGemaakt;
     } 
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 888423b80f08a961af5ca1887f5dfa02c399fd8d
     toJSON() {
         return {
             _id: this._id,

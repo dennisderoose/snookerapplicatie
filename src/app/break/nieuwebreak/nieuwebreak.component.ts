@@ -46,11 +46,7 @@ export class NieuwebreakComponent implements OnInit {
     let datum = new Date().getDate()+"/"+ maand +"/"+new Date().getFullYear();
     let typeGemaakt = this.break.value.typeGemaakt;
     const brek = new Break(parseInt(this.break.value.aantalpunten), datum.toString(), this.user, typeGemaakt);
-<<<<<<< HEAD
-
-=======
     
->>>>>>> 888423b80f08a961af5ca1887f5dfa02c399fd8d
     console.log(brek);
     this._snookerDataService.addNewBreak(brek).subscribe(item => {
     });
