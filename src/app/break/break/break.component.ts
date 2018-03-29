@@ -117,6 +117,6 @@ export class BreakComponent implements OnInit {
     };
 
     public verwijderen(brak) {
-      console.log(brak);
+      console.log(brak._id);
     }
 }
