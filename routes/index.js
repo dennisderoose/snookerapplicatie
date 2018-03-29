@@ -11,6 +11,11 @@ let auth = jwt({
 /* GET home page. */
 
 router.get("/snookerapplicatie/breaks", function (req, res, next) {
+  console.log("start");
+  console.log(req);
+  console.log(res);
+  console.log(next);
+  console.log("einde");
   let query = Break.find({ user:"dennis"});
   query.exec(function (err, breaks) {
     if (err) {
