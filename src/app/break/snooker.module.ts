@@ -11,6 +11,7 @@ import { SnookerResolver } from './snooker-resolver.service';
 import { LoadingModule } from 'ngx-loading';
 
 
+
 const routes = [
   { path: 'nieuwebreak', component:  NieuwebreakComponent}
 ];
