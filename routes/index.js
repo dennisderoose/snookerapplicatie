@@ -44,7 +44,11 @@ router.post("/snookerapplicatie/breaks/", auth, function (req, res, next) {
 
 router.delete("/snookerapplicatie/breaks/:id", auth, function (req, res, next) {
   let query = Break.findByIdAndRemove(req.params.id);
-  query.exec()
+  query.exec(function(err){
+    if(err) {
+      return next(err);
+    }
+  })
   .then(doc => {
     if(!doc) {
       return res.status(404).end();      
