@@ -48,9 +48,12 @@ export class NieuwebreakComponent implements OnInit {
     let datum = new Date().getDate()+"/"+ maand +"/"+new Date().getFullYear();
     let typeGemaakt = this.break.value.typeGemaakt;
     let datumGemaakt = this.break.value.datumGemaakt;
-
-    console.log(datumGemaakt.substring(1,2));
+    let jaar = datumGemaakt.substring(0,4);
+    let month = datumGemaakt.substring(5,7);
+    let dag = datumGemaakt.substring(9,11);
+    console.log(datumGemaakt.substring(0,4));
     console.log("datum begin");
+    console.log(dag+"/"+month+"/"+jaar);
     console.log(datumGemaakt);
     console.log("datum einde");
     const brek = new Break(parseInt(this.break.value.aantalpunten), datum.toString(), this.user, typeGemaakt);
