@@ -39,13 +39,13 @@ export class NieuwebreakComponent implements OnInit {
   }
 
   onSubmit() {
-    let maand = new Date().getMonth()+1
-    console.log("e");
-    console.log(maand);
-    console.log(new Date().getMonth()+1);
-    console.log("e")
+    //let maand = new Date().getMonth()+1
+    //console.log("e");
+    //console.log(maand);
+    //console.log(new Date().getMonth()+1);
+    //console.log("e")
 
-    let datum = new Date().getDate()+"/"+ maand +"/"+new Date().getFullYear();
+    //let datum = new Date().getDate()+"/"+ maand +"/"+new Date().getFullYear();
     let typeGemaakt = this.break.value.typeGemaakt;
     let datumGemaakt = this.break.value.datumGemaakt;
     let jaar = datumGemaakt.substring(0,4);
@@ -53,7 +53,7 @@ export class NieuwebreakComponent implements OnInit {
     let dag = datumGemaakt.substring(8,10);
     console.log(datumGemaakt.substring(0,4));
     console.log("datum begin");
-    console.log(dag+"/"+month+"/"+jaar);
+    let datum = dag+"/"+month+"/"+jaar;
     console.log(datumGemaakt);
     console.log("datum einde");
     const brek = new Break(parseInt(this.break.value.aantalpunten), datum.toString(), this.user, typeGemaakt);
