@@ -45,9 +45,12 @@ export class SnookerDataService {
     return Promise.reject(error.message || error);
  }
 
+ //removeBreak(rec) {
+ // return this.http.delete(`${this._appUrl}/break/${rec.id}`).map(res => res.json()).map(item => Break.fromJSON(item));  
+ //}
 
-  removeBreak(rec) {
-    return this.http.delete(`${this._appUrl}/break/${rec.id}`).map(res => res.json()).map(item => Break.fromJSON(item));
+  removeBreak(id) {
+    return this.http.delete(`${this._appUrl}/break/${id}`).map(res => res.json()).map(item => Break.fromJSON(item));
   }
 /*
   addOpmerkingToTopic(opmerking: Opmerking, topic: Topic): Observable<Opmerking> {
