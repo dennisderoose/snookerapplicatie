@@ -121,5 +121,6 @@ export class BreakComponent implements OnInit {
       this._snookerDataService.removeBreak(brak._id).subscribe(item =>
         this._breaks = this._breaks.filter(val => item.id !== val.id)
       );
+      this._router.navigate(['break']);
     }
 }
