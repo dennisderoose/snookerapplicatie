@@ -10,8 +10,8 @@ let auth = jwt({
 });
 /* GET home page. */
 
-router.get("/snookerapplicatie/breaks", function (req, res, next) {
-  let query = Break.find({ user:res.user});
+router.get("/snookerapplicatie/breaks/", function (req, res, next, gebruiker) {
+  let query = Break.find({ user:gebruiker});
   query.exec(function (err, breaks) {
     if (err) {
       res.json(breaks);
