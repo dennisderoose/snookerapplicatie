@@ -116,7 +116,7 @@ export class BreakComponent implements OnInit {
       });
     };
 
-    verwijderen() {
-      console.log("verwijderen testen");
+    public verwijderen(brak) {
+      console.log(brak);
     }
 }
