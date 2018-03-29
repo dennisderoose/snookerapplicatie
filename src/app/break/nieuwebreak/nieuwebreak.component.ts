@@ -4,6 +4,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Break } from '../break.model';
 import { FormGroup, FormBuilder, Validators, FormArray } from '@angular/forms';
 import { Observable } from 'rxjs/Rx';
+import { SlicePipe } from '@angular/common';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
 
@@ -47,6 +48,8 @@ export class NieuwebreakComponent implements OnInit {
     let datum = new Date().getDate()+"/"+ maand +"/"+new Date().getFullYear();
     let typeGemaakt = this.break.value.typeGemaakt;
     let datumGemaakt = this.break.value.datumGemaakt;
+
+    console.log(datumGemaakt.substring(1,2));
     console.log("datum begin");
     console.log(datumGemaakt);
     console.log("datum einde");
