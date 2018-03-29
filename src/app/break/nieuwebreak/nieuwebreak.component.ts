@@ -34,7 +34,8 @@ export class NieuwebreakComponent implements OnInit {
     this.break = this.fb.group({
       aantalpunten: ['', [Validators.required, Validators.minLength(1)]],
       typeGemaakt: ['', [Validators.required, Validators.minLength(1)]],
-      datumGemaakt: ['', [Validators.required, Validators.minLength(1)]]
+      datumGemaakt: ['', [Validators.required, Validators.minLength(1)]],
+      tegenstander: ['', [Validators.required, Validators.minLength(1)]]
     });    
   }
 
@@ -56,7 +57,8 @@ export class NieuwebreakComponent implements OnInit {
     let datum = dag+"/"+month+"/"+jaar;
     console.log(datumGemaakt);
     console.log("datum einde");
-    const brek = new Break(parseInt(this.break.value.aantalpunten), datum.toString(), this.user, typeGemaakt);
+    let tegenstander = this.break.value.tegenstander;
+    const brek = new Break(parseInt(this.break.value.aantalpunten), datum.toString(), this.user, typeGemaakt, tegenstander);
     
     console.log(brek);
     this._snookerDataService.addNewBreak(brek).subscribe(item => {

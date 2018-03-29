@@ -29,7 +29,8 @@ router.post("/snookerapplicatie/breaks/", auth, function (req, res, next) {
     aantalpunten: parseInt(req.body.aantalpunten),
     datum: req.body.datum,    
     user: req.body.user,
-    typeGemaakt: req.body.typeGemaakt
+    typeGemaakt: req.body.typeGemaakt,
+    tegenstander: req.body.tegenstander
   });
 
   brek.save(function (err, post) {

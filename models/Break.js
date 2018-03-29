@@ -5,7 +5,8 @@ let BreakSchema = new mongoose.Schema({
     aantalpunten: Number,
     datum: String,
     user: String,
-    typeGemaakt: String
+    typeGemaakt: String,
+    tegenstander: String
 
 });
 mongoose.model('Break', BreakSchema);
