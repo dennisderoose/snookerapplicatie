@@ -50,7 +50,7 @@ export class NieuwebreakComponent implements OnInit {
     let datumGemaakt = this.break.value.datumGemaakt;
     let jaar = datumGemaakt.substring(0,4);
     let month = datumGemaakt.substring(5,7);
-    let dag = datumGemaakt.substring(9,11);
+    let dag = datumGemaakt.substring(8,10);
     console.log(datumGemaakt.substring(0,4));
     console.log("datum begin");
     console.log(dag+"/"+month+"/"+jaar);
