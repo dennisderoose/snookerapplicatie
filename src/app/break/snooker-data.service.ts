@@ -50,7 +50,8 @@ export class SnookerDataService {
  //}
 
   removeBreak(id) {
-    return this.http.delete(`${this._appUrl}/breaks/${id}`, { headers: new Headers({Authorization: `Bearer ${this.auth.token}`})});
+    return this.http.delete(`${this._appUrl}/breaks/${id}`, { headers: new Headers({Authorization: `Bearer ${this.auth.token}`})})
+    .map(res => res.json()).map(item => Break.fromJSON(item));
   }
 /*
   addOpmerkingToTopic(opmerking: Opmerking, topic: Topic): Observable<Opmerking> {
