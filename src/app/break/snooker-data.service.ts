@@ -15,8 +15,8 @@ export class SnookerDataService {
   constructor(private http: Http, private auth: AuthenticationService) {
   }
 
-  get breaks(): Observable<Break[]> {
-    return this.http.get(`${this._appUrl}/breaks/`, { headers: new Headers({Authorization: `Bearer ${this.auth.token}`}) })
+  breaks(rec): Observable<Break[]> {
+    return this.http.get(`${this._appUrl}/breaks/`, { headers: new Headers({Authorization: `Bearer ${this.auth.token}`}), params:rec })
       .map(response => response.json().map(item => Break.fromJSON(item)));
 
   }
