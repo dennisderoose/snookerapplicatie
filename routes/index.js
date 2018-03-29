@@ -42,6 +42,19 @@ router.post("/snookerapplicatie/breaks/", auth, function (req, res, next) {
   });
 });
 
+router.delete("/snookerapplicatie/breaks/:id", auth, function (req, res, next) {
+  let query = Break.findByIdAndRemove(req.params.id);
+  query.exec()
+  .then(doc => {
+    if(!doc) {
+      return res.status(404).end();      
+    }
+  }).catch(err => next(err));
+});
+
+
+
+
 
 
 router.put("/snookerapplicatie/breaks/:id", auth, function (req, res) {
@@ -76,12 +89,6 @@ router.param("break", function (req, res, next, id) {
     return next();
   });
 });
-
-
-
-
-
-
 
 router.get("/snookerapplicatie/breaks/:break", function (req, res) {
   req.break.populate("opmerkingen", function (err, rec) {

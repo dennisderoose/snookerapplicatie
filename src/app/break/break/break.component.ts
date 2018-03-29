@@ -114,61 +114,9 @@ export class BreakComponent implements OnInit {
               return 0;
           }
       });
-  };
+    };
 
-/*
-    opmerking(evnt) {
-      //console.log(this.elTitle.toArray); 
-      let teller = 0;
-      let value = "";
-      let name = "";
-      this.elTitle.forEach(function(element) {
-        if(element.nativeElement.value != "") {
-          value = element.nativeElement.value
-          name = element.nativeElement.name          
-          teller ++;
-        }
-
-      });
-      //updaten van json object
-      if(teller == 1) {
-        console.log(value);
-        console.log(name);
-
-        let topic;
-
-        
-        this._topics.forEach(function(element) {          
-          if(element.name == name) {
-            element.opmerkingen.push(new Opmerking(element.id,value));
-            topic = element;
-          }
-        });
-        console.log(topic);
-        
-        this._topicDataService.updateTopic(topic,topic.id);
-
-
-      }*/
-      /*for(var i=0; i<this.elTitle.length; i++) {7
-        
-      }*/
-      //console.log(this.elTitle.nativeElement.name);
-      /*console.log(this.opmerkingtoevoegen.value.opmerkingname);    
-      let nextArray = [];
-      /*const topic = new Topic("kop","hln");
-      const opmerking = new Opmerking("klm");
-      nextArray.push(opmerking);
-      topic.opmerkingen = nextArray;
-      this._topicDataService.addNewTopic(topic).subscribe(item => {
-        const opmerking = topic.opmerkingen.map(opmerking =>
-          this._topicDataService.addOpmerkingToTopic(opmerking, item));   
-          
-          Observable.forkJoin(...opmerking).subscribe( (opmerkingen: Opmerking[]) => {
-            for (const ing of opmerkingen) {
-              item.addIngredient(ing);
-            }          
-          });
-      });*/  
-    //}   
+    verwijderen() {
+      console.log("verwijderen testen");
+    }
 }
