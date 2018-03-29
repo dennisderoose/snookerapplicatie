@@ -119,6 +119,7 @@ export class BreakComponent implements OnInit {
     public verwijderen(brak) {
       console.log(brak._id);
       this._snookerDataService.removeBreak(brak._id).subscribe();
+      window.location.reload();
       this._router.navigate(['break'], { queryParams: { user: this.user} });
     }
 }
