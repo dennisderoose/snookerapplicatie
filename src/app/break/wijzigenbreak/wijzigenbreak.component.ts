@@ -29,11 +29,16 @@ export class WijzigenbreakComponent implements OnInit {
   private break: Break;
   private naam: String;
 
+  public breakwijzigen: FormGroup;
+
   constructor(private fb: FormBuilder, private _snookerDataService: SnookerDataService, private route: ActivatedRoute, private _router: Router, private location: Location) { }
 
   ngOnInit() {
     this.naam = "tennis"
     this.loading = true;
+
+    this.breakwijzigen = this.fb.group({}); 
+
 
     this.sub = this.route
     .queryParams
