@@ -27,10 +27,12 @@ export class WijzigenbreakComponent implements OnInit {
   public loading = false;
   private sub: any;
   private break: Break;
+  private naam: String;
 
   constructor(private fb: FormBuilder, private _snookerDataService: SnookerDataService, private route: ActivatedRoute, private _router: Router, private location: Location) { }
 
   ngOnInit() {
+    this.naam = "tennis"
     this.loading = true;
 
     this.sub = this.route
