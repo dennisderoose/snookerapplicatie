@@ -123,7 +123,8 @@ export class BreakComponent implements OnInit {
       this._router.navigate(['break'], { queryParams: { user: this.user} });
     }
 
-    public wijzigen(brak: Break) {    
+    public wijzigen(brak) {    
+      console.log(brak._id);
       this._router.navigate(['wijzigenbreak'], { queryParams: { brak: brak} });
     }
 

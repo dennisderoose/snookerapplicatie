@@ -52,6 +52,7 @@ export class WijzigenbreakComponent implements OnInit {
       this.break = params['brak'] || "";
     });
     console.log("k");
+    console.log(this.break.id);
     console.log(this.break.aantalpunten);
 
   }
