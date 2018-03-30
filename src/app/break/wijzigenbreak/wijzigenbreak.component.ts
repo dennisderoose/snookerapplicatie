@@ -26,7 +26,7 @@ export class WijzigenbreakComponent implements OnInit {
 
   public loading = false;
   private sub: any;
-  private break: Break;
+  private break: any;
   private naam: String;
   private id: String
 
@@ -53,7 +53,7 @@ export class WijzigenbreakComponent implements OnInit {
       this.id = params['brak'] || "";
     });
     console.log("k");
-    console.log(this.id);
+    console.log(this.break.aantalpunten);
 
   }
 
