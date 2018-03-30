@@ -51,7 +51,8 @@ export class WijzigenbreakComponent implements OnInit {
       // Defaults to 0 if no query param provided.
       this.break = params['brak'] || "";
     });
-
+    console.log("k");
+    console.log(this.break);
 
   }
 
