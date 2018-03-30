@@ -37,7 +37,12 @@ export class WijzigenbreakComponent implements OnInit {
     this.naam = "tennis"
     this.loading = true;
 
-    this.breakwijzigen = this.fb.group({}); 
+    this.breakwijzigen = this.fb.group({
+      aantalpunten: ['', [Validators.required, Validators.minLength(1)]],
+      typeGemaakt: ['', [Validators.required, Validators.minLength(1)]],
+      datumGemaakt: ['', [Validators.required, Validators.minLength(1)]],
+      tegenstander: ['', [Validators.required, Validators.minLength(1)]]
+    }); 
 
 
     this.sub = this.route
