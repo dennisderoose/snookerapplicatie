@@ -122,4 +122,9 @@ export class BreakComponent implements OnInit {
       window.location.reload();
       this._router.navigate(['break'], { queryParams: { user: this.user} });
     }
+
+    public wijzigen(brak: Break) {    
+      this._router.navigate(['wijzigenbreak'], { queryParams: { brak: brak} });
+    }
+
 }
