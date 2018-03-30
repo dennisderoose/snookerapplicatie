@@ -28,6 +28,7 @@ export class WijzigenbreakComponent implements OnInit {
   private sub: any;
   private break: Break;
   private naam: String;
+  private id: String
 
   public breakwijzigen: FormGroup;
 
@@ -49,9 +50,10 @@ export class WijzigenbreakComponent implements OnInit {
     .queryParams
     .subscribe(params => {
       // Defaults to 0 if no query param provided.
-      this.break = params['brak'] || "";
+      this.id = params['brak'] || "";
     });
     console.log("k");
+    console.log(this.id);
     console.log(this.break.id);
     console.log(this.break.aantalpunten);
 
