@@ -56,9 +56,11 @@ export class WijzigenbreakComponent implements OnInit {
     .subscribe(params => {
       // Defaults to 0 if no query param provided.
       this.aantalpunten = params['aantalpunten'] || "";
+      this.type = params['type'] || "";
     });
     console.log("k");
     console.log(this.aantalpunten);
+    console.log(this.type);
 
   }
 
