@@ -26,7 +26,7 @@ export class WijzigenbreakComponent implements OnInit {
 
   public loading = false;
   private sub: any;
-  private brak: Break;
+  private break: Break;
 
   constructor(private fb: FormBuilder, private _snookerDataService: SnookerDataService, private route: ActivatedRoute, private _router: Router, private location: Location) { }
 
@@ -37,7 +37,7 @@ export class WijzigenbreakComponent implements OnInit {
     .queryParams
     .subscribe(params => {
       // Defaults to 0 if no query param provided.
-      this.brak = params['brak'] || "";
+      this.break = params['brak'] || "";
     });
 
 
