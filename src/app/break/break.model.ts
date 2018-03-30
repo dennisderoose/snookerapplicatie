@@ -34,6 +34,7 @@ export class Break {
     }
 
     get datum(): string {
+        console.log(this.datum);
         return this.datum;
     }
 
