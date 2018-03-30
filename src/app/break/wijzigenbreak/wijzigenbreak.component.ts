@@ -57,10 +57,14 @@ export class WijzigenbreakComponent implements OnInit {
       // Defaults to 0 if no query param provided.
       this.aantalpunten = params['aantalpunten'] || "";
       this.type = params['type'] || "";
+      this.tegenstander = params['tegenstander'] || "";            
+      this.datum = params['datum'] || "";
     });
     console.log("k");
     console.log(this.aantalpunten);
     console.log(this.type);
+    console.log(this.tegenstander);
+    console.log(this.datum);
 
   }
 
