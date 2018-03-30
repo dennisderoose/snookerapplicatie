@@ -53,7 +53,7 @@ export class WijzigenbreakComponent implements OnInit {
       this.id = params['brak'] || "";
     });
     console.log("k");
-    console.log(this.break);
+    console.log(this.break._id);
 
   }
 
