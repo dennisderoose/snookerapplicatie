@@ -9,17 +9,20 @@ import { RouterModule, Routes } from '@angular/router';
 import { SnookerDataService } from './snooker-data.service';
 import { SnookerResolver } from './snooker-resolver.service';
 import { LoadingModule } from 'ngx-loading';
+import { WijzigenbreakComponent } from './wijzigenbreak/wijzigenbreak.component';
 
 
 
 const routes = [
-  { path: 'nieuwebreak', component:  NieuwebreakComponent}
+  { path: 'nieuwebreak', component:  NieuwebreakComponent},
+  { path: 'wijzigenbreak', component:  WijzigenbreakComponent}
 ];
 
 @NgModule({
   declarations: [
     BreakComponent,
-    NieuwebreakComponent
+    NieuwebreakComponent,
+    WijzigenbreakComponent
   ],
   imports: [
     HttpModule,
