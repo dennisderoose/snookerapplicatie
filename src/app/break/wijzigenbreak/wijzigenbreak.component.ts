@@ -32,6 +32,7 @@ export class WijzigenbreakComponent implements OnInit {
   private aantalpunten: any;
   private type: any;
   private tegenstander: any;
+  private user: any;
 
 
   public breakwijzigen: FormGroup;
@@ -57,6 +58,7 @@ export class WijzigenbreakComponent implements OnInit {
       this.aantalpunten = params['aantalpunten'] || "";
       this.type = params['type'] || "";
       this.tegenstander = params['tegenstander'] || "";
+      this.user = params['user'] || "";
     });
     console.log("k");
     console.log(this.aantalpunten);
