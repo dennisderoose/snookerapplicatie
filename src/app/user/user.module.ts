@@ -13,6 +13,7 @@ import { NieuwebreakComponent } from './../break/nieuwebreak/nieuwebreak.compone
 import { SnookerDataService } from './../break/snooker-data.service';
 import { SnookerResolver } from './../break/snooker-resolver.service';
 import { LoadingModule } from 'ngx-loading';
+import { WijzigenbreakComponent } from '../break/wijzigenbreak/wijzigenbreak.component';
 //import { TopicDetailsComponent } from './../topic/topic-details/topic-details.component';
 
 const routes = [
@@ -20,7 +21,8 @@ const routes = [
   { path: 'logout', component: LogoutComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'break', component: BreakComponent},
-  { path: 'nieuwebreak', component: NieuwebreakComponent}
+  { path: 'nieuwebreak', component: NieuwebreakComponent},
+  { path: 'wijzigenbreak', component: WijzigenbreakComponent}
 ];
 
 @NgModule({
@@ -36,7 +38,8 @@ const routes = [
     RegisterComponent,
     LogoutComponent,
     BreakComponent,
-    NieuwebreakComponent
+    NieuwebreakComponent,
+    WijzigenbreakComponent
   ],
   providers: [
     AuthenticationService,
