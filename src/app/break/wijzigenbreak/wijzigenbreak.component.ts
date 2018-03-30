@@ -54,8 +54,6 @@ export class WijzigenbreakComponent implements OnInit {
     });
     console.log("k");
     console.log(this.id);
-    console.log(this.break.id);
-    console.log(this.break.aantalpunten);
 
   }
 
