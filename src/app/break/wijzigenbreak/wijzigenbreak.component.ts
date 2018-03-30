@@ -28,7 +28,7 @@ export class WijzigenbreakComponent implements OnInit {
   private sub: any;
   private break: any;
   private naam: String;
-  private id: String
+  private id: any;
 
   public breakwijzigen: FormGroup;
 
@@ -53,7 +53,7 @@ export class WijzigenbreakComponent implements OnInit {
       this.id = params['brak'] || "";
     });
     console.log("k");
-    console.log(this.break._id);
+    console.log(this.id._id);
 
   }
 
