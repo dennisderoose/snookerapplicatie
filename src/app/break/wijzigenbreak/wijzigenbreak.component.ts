@@ -32,7 +32,6 @@ export class WijzigenbreakComponent implements OnInit {
   private aantalpunten: any;
   private type: any;
   private tegenstander: any;
-  private datum: any;
 
 
   public breakwijzigen: FormGroup;
@@ -57,14 +56,12 @@ export class WijzigenbreakComponent implements OnInit {
       // Defaults to 0 if no query param provided.
       this.aantalpunten = params['aantalpunten'] || "";
       this.type = params['type'] || "";
-      this.tegenstander = params['tegenstander'] || "";            
-      this.datum = params['datum'] || "";
+      this.tegenstander = params['tegenstander'] || "";
     });
     console.log("k");
     console.log(this.aantalpunten);
     console.log(this.type);
     console.log(this.tegenstander);
-    console.log(this.datum);
 
   }
 
