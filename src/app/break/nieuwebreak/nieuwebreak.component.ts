@@ -68,4 +68,8 @@ export class NieuwebreakComponent implements OnInit {
       this._router.navigate(['break'], { queryParams: { user: this.user} });
     }, 1000); 
   }
+
+  terugnaarbreak() {
+    this._router.navigate(['break'], { queryParams: { user: this.user} });
+  }
 }
