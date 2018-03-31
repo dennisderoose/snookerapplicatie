@@ -15,7 +15,7 @@ export class Break {
 
     constructor(aantalpunten: number, datum: string, user?: string, typeGemaakt?: string, tegenstander?: string) {
         this._aantalpunten = aantalpunten;
-        this._datum = datum;    
+        this._datum = datum || "";    
         this._user = user || "";
         this._typeGemaakt = typeGemaakt || "Niet ingevuld";                        
         this._tegenstander = tegenstander || "/";
@@ -34,7 +34,7 @@ export class Break {
     }
 
     get datum(): string {        
-        return this.datum;
+        return this._datum;
     }
 
     set datum(datum: string) {
