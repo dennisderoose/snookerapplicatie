@@ -67,4 +67,8 @@ export class WijzigenbreakComponent implements OnInit {
 
   }
 
+  terugnaarbreak() {
+    this._router.navigate(['break'], { queryParams: { user: this.user} });
+  }  
+
 }
