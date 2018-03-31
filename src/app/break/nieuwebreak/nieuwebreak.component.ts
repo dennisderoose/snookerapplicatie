@@ -70,6 +70,9 @@ export class NieuwebreakComponent implements OnInit {
   }
 
   terugnaarbreak() {
-    this._router.navigate(['break'], { queryParams: { user: this.user} });
+    console.log("terugkeren");
+    setTimeout((router: Router) => {
+      this._router.navigate(['break'], { queryParams: { user: this.user} });
+    }, 1000); 
   }
 }
