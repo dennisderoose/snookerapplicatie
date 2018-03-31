@@ -33,8 +33,7 @@ export class Break {
         this._aantalpunten = aantalpunten;
     }
 
-    get datum(): string {
-        console.log(this.datum);
+    get datum(): string {        
         return this.datum;
     }
 

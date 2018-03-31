@@ -124,7 +124,7 @@ export class BreakComponent implements OnInit {
     }
 
     public wijzigen(brek) {    
-      console.log(brek._id);
+      console.log(brek);
       console.log(brek.datum);
       console.log(brek.typeGemaakt);
       console.log(brek._datum);
