@@ -20,26 +20,7 @@
     <input type="date" id="datumGemaakt" formControlName='datumGemaakt' value="{{datum}}">  
   </div>
 
-<body ng-app="myApp">
-  <div ng-controller="MyCtrl">
-    <input type="date" ng-model="date" value={{date}}>
-     <p>{{date}}</p>
-    <input type="time">    
-</div>
-</body>
-
-
-
 
   <button type='submit' class="ui positive right floated button">add</button>
 </form>
 <a class='item' routerLink="/break" (click)="terugnaarbreak()">break</a>
-
-
-<script>
-  var myApp = angular.module('myApp',[]);
-
-function MyCtrl($scope, $filter) {
-    $scope.date = $filter("date")(Date.now(), 'yyyy-MM-dd');
-}
-</script>
