@@ -41,6 +41,7 @@ export class WijzigenbreakComponent implements OnInit {
   constructor(private fb: FormBuilder, private _snookerDataService: SnookerDataService, private route: ActivatedRoute, private _router: Router, private location: Location) { }
 
   ngOnInit() {
+    
     this.naam = "tennis"
     this.loading = true;
 
