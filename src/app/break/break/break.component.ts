@@ -125,6 +125,9 @@ export class BreakComponent implements OnInit {
 
     public wijzigen(brek) {    
       console.log(brek._id);
+      console.log(brek.datum);
+      console.log(brek.typeGemaakt);
+      console.log(brek._datum);
       this._router.navigate(['wijzigenbreak'], { queryParams: { aantalpunten: brek.aantalpunten, type: brek.typeGemaakt, tegenstander: brek.tegenstander, user: brek.user, datum: "29/03/2018"} });
     }
 
