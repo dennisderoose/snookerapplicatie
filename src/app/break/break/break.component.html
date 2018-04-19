@@ -13,7 +13,7 @@
 
 <div class="my-container">
 <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
-<table id="dt" class="ui unstackable table">
+<table id="dt" name="dt" class="ui unstackable table">
   <thead>
     <tr>
       <th class="header item">Naam Speler</th>
@@ -30,7 +30,7 @@
       <td class="header item">{{break?._user}}</td>
       <td class="header item">{{break?._tegenstander}}</td>
       <td class="header item">{{break?._aantalpunten}}</td>
-      <td class="header item">{{break?._datum}}</td>
+      <td class="header item" name="date-uk" class="date-uk">{{break?._datum}}</td>
       <td class="header item">{{break?._typeGemaakt}}</td>
       <td class="header item"><a (click)="wijzigen(break)">wijzigen</a></td>
       <td class="header item"><a (click)="verwijderen(break)">verwijderen</a></td>
